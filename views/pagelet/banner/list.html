@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/static/css/page/banner/list.css">
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+<div class="mod-banner-list">
+ 	<div class="list-header">
+ 		<div class="ui icon input">
+			<input type="text" placeholder="搜索banner">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/banner/publish"  class="ui  button action-paresh">
+			<i class="user icon"></i>
+			添加banner
+		</a>
+ 	</div>
+	<table class="ui  column table segment">
+		
+		<thead>
+			<tr>
+				<th>图片</th>
+				<th>是否被禁用</th>
+				<th>排序</th> 
+				<th>操作</th>
+			</tr>
+		</thead> 
+		<tbody>
+			<% for(var i = 0; i < list.length; i ++) { %>
+			<%
+				var item = list[i];
+				var showName = '是'
+			%>
+			<% if(item.show==0) { %>
+			<%	showName = '否' %>
+			<% } %>
+			<tr class="item" data-id="${item.id}" data-show="${item.show}" data-imageid="${item.imageId}">
+				<td class="images">
+					<span><i class="edit icon"></i></span>
+					<a href="${item.jumpUrl}" target="_blank">
+						<img src="${item.imageUrl}" alt=""> </a>
+					</a>
+				</td>
+				<td class="show">${showName}</td>
+				<td class="weight">${item.weight}</td>
+				<td>
+					<a data-id="${item.id}" class="del" href="void:javascript(0)">删除</a> 
+				</td>
+			</tr>
+			<% } %>
+		</tbody>  
+	</table>
+
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+
+
+
+<script type="text/javascript" src="/static/js/mod/banner/list.js"></script>
+

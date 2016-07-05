@@ -1,0 +1,69 @@
+<link href="/static/css/page/stickers/publish.css">
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+<div class="mod-stickers">
+	<form action="/stickers/create" method="post" id="mod-stickers">
+		<div class="row ui form">
+			<div class="two fields">
+				<div class="row lunch-image field">
+					<h3>请上传贴纸图 </h3>
+					<%include 'common/widgets/input-image-preview'%>
+				</div>
+				<div class="row lunch-image field">
+					<h3>请上传预览图</h3>
+					<%include 'common/widgets/input-image-preview' '{name: "viewFile"}'%>
+				</div>
+			</div>
+		<div>
+		<div class="field">
+			<div class="ui right icon input">
+				<input type="number" min="1" placeholder="权重" name="weight">
+				<i class="resize vertical icon"></i>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui right icon input">
+				<input type="text" name="name" placeholder="名称">
+				<i class="home  icon"></i>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui buttons fullscree-status">
+				<div class="ui button positive" data-type="0">非全屏贴纸</div>
+				<div class="or"></div>
+				<div class="ui button" data-type="1">全屏贴纸</div>
+			</div>
+		</div>
+
+		<div class="field">
+			<div class="ui buttons type-status">
+				<div class="ui button positive btn-common" data-id="0">普通贴纸</div>
+				<div class="or"></div>
+				<div class="ui button btn-type" data-id="1">分类贴纸</div>
+			</div>
+		</div>
+		<div class="stype-list">
+		<%
+		var list = data['stickerTypes'];
+		%>
+		<% for(var i =0; i < list.length; i++) { %>
+		<%
+		var item = list[i];
+		var itemID = item['id'];
+		%>
+		<div class="type-list">
+			<div class="ui checkbox">
+				<input  id="${itemID}" type="radio" name="stickerTypeId" value="${itemID}">
+				<img src="${item.cacheUrl}" alt="">
+				<!-- <label for="${itemID}">${item['name']}</label> -->
+			</div>
+		</div>
+		<% } %>
+		<div class="column add-type" back><i class="add middle icon"></i>添加</div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div class="ui btn-submit primary button">提交</div>
+		</div>
+	</form>
+</div>
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+<script type="text/javascript" src="/static/js/mod/stickers/publish.js"></script>

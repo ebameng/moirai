@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/static/css/page/stickers/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+<div class="mod-stickers-list mod" >
+	<div class="list-header">
+		<div class="ui icon input">
+			<input type="text" placeholder="搜索贴纸">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/stickers/publish"  class="ui down button action-paresh">
+			<i class="tag icon"></i>
+			添加贴纸
+		</a>
+	</div>
+	<ul>
+		<% for(var i =0; i < list.length; i++) {%>
+		<%
+		var item = list[i];
+		var fullscreen = item.fullScreen;
+		%>
+		<li class="item" data-id="${item.id}" data-cachekey="${item.cacheKey}" data-weight="${item.weight}" data-level="${item.level}" data-show="${item.delFlag}" data-stid="${item.stickerTypeId}" data-size="${item.size}" data-name="${item.name}" data-fs="${item.fullScreen}" data-vk="${item.viewKey}">
+			<div class="img-wrap">
+				<img class="lazy-load look-detail" src="${item.cacheUrl}" data-view="${item.viewUrl}" alt="">
+			</div>
+			<p class="name">${item.name}<i class="weight">(${item.weight})</i>
+			</p>
+			<span class="update"><i class="edit icon"></i></span>
+
+			<% if(fullscreen == 1) { %>
+			<p class="isfullscreen">全屏贴纸</p>
+			<% } %>
+		</li>
+		<% } %>
+	</ul>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<link rel="stylesheet" href="/static/plugins/aui-artDialog/css/ui-dialog.css">
+<script src="/static/plugins/aui-artDialog/dist/dialog-min.js"></script>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/stickers/list.js"></script>

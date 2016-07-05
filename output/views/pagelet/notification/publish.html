@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/static/css/page/notification/publish.css">
+<link rel="stylesheet" href="/static/plugins/datetime.picker/jquery.datetimepicker.css">
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+
+<div class="mod-notification-publish">
+	<form action="/notification/create" method="post" class="create-notification">
+		<%include 'common/widgets/input-image-preview'%>
+		<div class="row">
+			<div>
+				<div class="ui form">
+				    <textarea style="min-height: 48px;height: 48px; width: 600px;" name="content" placeholder="描述"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h2 class="label">启用定时器（可选）</h2>
+			<div class="ui left icon input">
+				<input type="text" readonly class="datetimepicker" name="timer" placeholder="日期时间" />
+				<i class="time icon"></i>
+			</div>
+			<span class="clear-timer">清空</span>
+		</div>
+
+		<div class="row">
+			<h3 class="label">跳转类型</h3>
+			<div class="ui buttons resource-type">
+				<div class="ui button positive person-page" data-id="1">个人页</div>
+				<div class="or"></div>
+				<div class="ui  button label-page" data-id="2">标签页</div>
+				<div class="or"></div>
+				<div class="ui  button publish" data-id="3">发布</div>
+				<div class="or"></div>
+				<div class="ui button h5-link" data-id="4">h5链接</div>
+			</div>
+		</div>
+		<div class="row search-name-tmpl" style="position: relative;">
+			<div class="ui right icon input  name-search-box">
+				<input type="text"  class="name-search-input" placeholder="根据用户名搜索" name="name" />
+				<input type="hidden" name="nameid" class="name-search-id" />
+				<i class="tags icon"></i>
+				<ul class="ui-suggestion"> </ul>
+			</div>
+		</div>
+		<div class="row search-label-tmpl" style="position: relative;">
+			<div class="ui right icon input  label-search-box">
+				<input type="text"  class="label-search-input" placeholder="根据标签名搜索" name="label" />
+				<input type="hidden"  class="label-search-id" name="labelid" />
+				<i class="tags  icon"></i>
+				<ul class="ui-suggestion"> </ul>
+			</div>
+		</div>		
+		<div class="row jumpTarget">
+			<div class="ui icon input">
+				<input type="text" name="jump" placeholder="跳转链接(自填)">
+				<i class="settings linkify icon"></i>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="ui btn-submit primary button">提交</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="/static/js/mod/notification/publish.js"></script>

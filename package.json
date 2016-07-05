@@ -1,0 +1,53 @@
+{
+  "name": "moirai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://591ku.com/gitbucket/git/zhangjie/solar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.6.6",
+    "chalk": "^1.0.0",
+    "cheerio": "^0.17.0",
+    "coffee-script": "^1.8.0",
+    "cookie-parser": "^1.3.2",
+    "cookie-session": "^1.0.2",
+    "download": "^4.1.2",
+    "ejs": "^1.0.0",
+    "evertpl": "",
+    "evertpl-fn": "^1.0.8",
+    "express": "^4.8.5",
+    "formidable": "^1.0.15",
+    "fs-extra": "^0.18.0",
+    "gaze": "^0.6.4",
+    "jhash": "^0.1.5",
+    "jszip": "^2.5.0",
+    "lodash": "^2.4.1",
+    "mkdirp": "^0.5.0",
+    "mongoose": "^4.0.1",
+    "multiparty": "^4.0.0",
+    "nodemailer": "^1.2.1",
+    "optimist": "^0.6.1",
+    "python-shell": "0.0.3",
+    "q": "^1.0.1",
+    "qiniu": "^6.1.5",
+    "qs": "^2.3.3",
+    "random-js": "^1.0.4",
+    "request": "^2.55.0",
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5",
+    "socket.io-cookie": "0.0.1",
+    "socket.io-redis": "^0.1.4",
+    "stylus": "^0.47.3",
+    "trim": "0.0.1",
+    "uid": "0.0.2",
+    "which": "*"
+  }
+}

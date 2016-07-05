@@ -1,0 +1,151 @@
+body {
+  padding: 12px;
+}
+.mod-spider-pinsta .fields input.disable,
+.mod-spider-weibo .fields input.disable {
+  background: #e1e1e1;
+}
+.mod-spider-pinsta .spider-msg-item,
+.mod-spider-weibo .spider-msg-item {
+  color: #eee;
+  margin-top: 12px;
+  padding: 4px;
+}
+.mod-spider-pinsta .spider-terminal,
+.mod-spider-weibo .spider-terminal {
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: 3px;
+  min-height: 400px;
+  background: #1c2c36;
+  color: #fff;
+}
+.mod-spider-pinsta .spider-terminal::after,
+.mod-spider-weibo .spider-terminal::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-spider-pinsta .spider-terminal .item,
+.mod-spider-weibo .spider-terminal .item {
+  width: 140px;
+  height: 140px;
+  float: left;
+  background: #333;
+  margin: 0 12px 12px 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mod-spider-pinsta .spider-terminal .item a,
+.mod-spider-weibo .spider-terminal .item a {
+  height: 100px;
+  width: 140px;
+  background: #808080;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+.mod-spider-pinsta .spider-terminal .item img,
+.mod-spider-weibo .spider-terminal .item img {
+  height: 100%;
+  width: auto;
+}
+.mod-spider-pinsta .spider-terminal .item .user,
+.mod-spider-weibo .spider-terminal .item .user {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  padding: 0 12px;
+  height: 40px;
+  color: #eee;
+}
+.mod-spider-pinsta .spider-terminal .item .user img,
+.mod-spider-weibo .spider-terminal .item .user img {
+  display: block;
+  border-radius: 18px;
+  height: 36px;
+  min-width: 36px;
+  width: auto;
+}
+.mod-spider-pinsta .spider-terminal .item .user .name,
+.mod-spider-weibo .spider-terminal .item .user .name {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mod-spider-pinsta .ui.tabular,
+.mod-spider-weibo .ui.tabular {
+  margin-bottom: 0;
+}
+.mod-spider-pinsta .ui.tabular .item.active,
+.mod-spider-weibo .ui.tabular .item.active {
+  background: #1c2c36;
+  color: #fff;
+  border-bottom: 1px solid #1c2c36;
+}
+.mod-spider-pinsta footer.status-bar,
+.mod-spider-weibo footer.status-bar {
+  position: absolute;
+  height: 22px;
+  line-height: 10px;
+  font-size: 12px;
+  top: -3px;
+  left: 10px;
+  right: 10px;
+  background: #47b742;
+  padding: 4px;
+  padding-top: 7px;
+  border-radius: 4px;
+  color: #fff;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.mod-spider-pinsta footer.status-bar .status-item,
+.mod-spider-weibo footer.status-bar .status-item {
+  margin: 0 12px;
+}
+.mod-spider-pinsta footer.status-bar .repeat-check,
+.mod-spider-weibo footer.status-bar .repeat-check {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  text-align: right;
+  -webkit-transition: all;
+  -o-transition: all;
+  -moz-transition: all;
+  transition: all;
+}
+.mod-spider-pinsta footer.status-bar .repeat-check span,
+.mod-spider-weibo footer.status-bar .repeat-check span {
+  background: #008000;
+  padding: 3px 8px;
+}
+.mod-spider-pinsta .tab-bars h4,
+.mod-spider-weibo .tab-bars h4 {
+  padding: 20px;
+}

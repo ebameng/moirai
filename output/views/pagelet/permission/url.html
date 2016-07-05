@@ -1,0 +1,24 @@
+<div class="panel">
+	<h2 class="title"> 可用权限列表 </h2>
+	<ul>
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+			var item = list[i];
+			var levelName = '读';
+			if (item.level == 1) {
+				levelName = '写（添加、修改、删除）';
+			}
+		%>
+		<li class="item animated pulse url" data-id="${item.id}">
+			<h4><i class="icon fork"></i>${item.content}</h4>
+			<div>
+				<div class="name">属性：<span>${levelName}</span></div>
+				<div>位置：<span>${item.url}</span></div>
+			</div>
+		</li>
+		<% } %>
+
+	</ul>
+</div>
+<script src="/static/js/base/zepto-dnd.js"></script>
+<script src="/static/js/mod/permission/url.js"></script>

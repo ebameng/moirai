@@ -1,0 +1,87 @@
+<div class="panel">
+	<div class="col">
+		<% for(var i = 0; i < list.length; i = i + 2) { %>
+		<%
+			var item = list[i];
+			var permissionUrls = item['permissionUrls'];
+		%>
+			<div class="item role animated zoomIn">
+				<h2>角色名：<span>${item.name}</span>
+					<p>${item.content}</p>
+					<div class="small red icon ui buttons menu">
+						<div class="ui button update" title="编辑"><i class="edit icon"></i></div>
+						<div class="ui button delete" title="删除"><i class="minus  icon"></i></div>
+					</div>
+				</h2>
+				<ul data-id="${item.id}">
+					<% if (permissionUrls.length == 0) { %>
+						<li class="empty">拖拽权限到这里！</li>
+					<% } else { %>
+						<% for(var j = 0; j < permissionUrls.length; j ++) { %>
+						<%
+							var itemUrl = permissionUrls[j];
+							var levelName = '仅';
+							if (itemUrl.level == 1) {
+								levelName = '可读写（添加、修改、删除）';
+							}
+						%>
+						<li class="item url" data-id="${itemUrl.id}">
+							<h4><i class="icon fork"></i>${itemUrl.content}</h4>
+							<div>
+								<div class="level" data-level="${item.level}">属性：${levelName}</div>
+								<div class="url">位置：${itemUrl.url}</div>
+							</div>
+						</li>
+						<% } %>
+					<% } %>
+				</ul>
+			</div>
+		<% } %>
+	</div>
+	<div class="col">
+		<% for(var i = 1; i < list.length; i = i + 2) { %>
+		<%
+			var item = list[i];
+			var permissionUrls = item['permissionUrls'];
+		%>
+			<div class="item role animated zoomIn">
+				<h2>角色名：<span>${item.name}</span>
+					<p>${item.content}</p>
+					<div class="small red icon ui buttons menu">
+						<div class="ui button update" title="编辑"><i class="edit icon"></i></div>
+						<div class="ui button delete" title="删除"><i class="minus  icon"></i></div>
+					</div>
+				</h2>
+				<ul data-id="${item.id}">
+					<% if (permissionUrls.length == 0) { %>
+						<li class="empty">拖拽权限到这里！</li>
+					<% } else { %>
+						<% for(var j = 0; j < permissionUrls.length; j ++) { %>
+						<%
+							var itemUrl = permissionUrls[j];
+							var levelName = '仅';
+							if (itemUrl.level == 1) {
+								levelName = '可读写（添加、修改、删除）';
+							}
+						%>
+						<li class="item url" data-id="${itemUrl.id}">
+							<h4><i class="icon fork"></i>${itemUrl.content}</h4>
+							<div>
+								<div class="level" data-level="${item.level}">属性：${levelName}</div>
+								<div class="url">位置：${itemUrl.url}</div>
+							</div>
+						</li>
+ 
+						<% } %>
+					<% } %>
+					
+				</ul>
+			</div>
+		<% } %>
+	</div>
+</div>
+
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+
+<script src="/static/js/base/zepto-dnd.js"></script>
+<script src="/static/js/mod/permission/role.js"></script>

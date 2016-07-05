@@ -1,0 +1,19 @@
+var express = require('express');
+var app = express();
+
+app.get('/', function(req,res)) {
+	res.send('hello world');
+}
+app.listen(8889);
+
+
+var globals, name;
+
+globals = ((function() {
+	var _results;
+	_results = [];
+	for (name in window) {
+		_results.push(name);
+	}
+	return _results;
+})()).slice(0, 10);

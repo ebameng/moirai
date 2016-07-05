@@ -1,0 +1,101 @@
+<style>
+	.mod-error {
+		text-align: center;
+		padding: 40px;
+	}
+	.help {
+		padding: 100px;
+	}
+	.code_list {
+		text-align: left;
+	}
+</style>
+<div class="mod-error">
+	<h2>提示：<%= msg %> </h2>
+	<p>访问异常 &nbsp;（异常代码：<%= node_code %>）</p>
+	<div class="help">
+		<%if (node_code == 20004) { %>
+			<p>您的会话已失效，<a href="/login">请点击我重新登录</a></p>
+		<% } else if(node_code == 30001) { %>
+			<a href="/login">参数错误</a>
+		<% } else if(node_code == 55) { %>
+			<p>您可能需要请检查你的网络情况</p>
+		<% } else { %>
+			<ul class="code_list">
+				<li>
+					<h2> 20000段代码 </h2>
+					<ul>
+						<li>20001	Permission denied	没有权限</li>
+						<li>20002	Login Timeout	登陆失效</li>
+						<li>20003	User does not exist	用户不存在</li>
+						<li>20004	No login	未登录</li>
+						<li>20005	the user is disabled	用户已被封号</li>
+					</ul>
+				</li>
+				<li>
+					<h2> 请求参数错误码：30001 ++ </h2>
+					<ul>
+						<li>30001	Parameter error	参数错误</li>
+						<li>30002	Request type error	请求类错误</li>
+					</ul>
+				</li>
+				<li>
+					<h2>请求参数错误码：40001 ++</h2>
+					<ul>
+						<li>40001	Image size too large	图片太大</li>
+						<li>40002	Repeat submitted	重复提交</li>
+						<li>40011	zip file format name error	压缩文件格式名错误</li>
+						<li>40012	zip file content error	压缩文件内容错误</li>
+						<li>40013	unzip file failed	解压缩失败</li>
+						<li>40110	image not exist	图片id不存在</li>
+						<li>40111	image not selected	没有选择图片</li>
+						<li>40112	image type unsupported , only suport JPG, GIF, PNG	不支持的图片类型，仅仅支持JPG、GIF、PNG</li>
+						<li>40113	image insert failed	新建图片失败</li>
+						<li>40114	image upload exception	上传图片发生异常</li>
+						<li>40115	image delete failed	图片删除失败</li>
+						<li>40116	image update failed	图片更新失败</li>
+						<li>40130	label not exist	标签id不存在</li>
+						<li>40131	label name repeat	标签名字已存在</li>
+						<li>40132	label insert failed	新建标签失败</li>
+						<li>40133	label update failed	标签更新失败</li>
+						<li>40134	label delete failed	标签删除失败</li>
+						<li>40135	label merge failed	标签合并失败</li>
+						<li>40160	atlas not exist	图集id不存在</li>
+						<li>40161	atlas insert failed	新建图集失败</li>
+						<li>40162	atlas delete failed	删除图集失败</li>
+						<li>40180	the user vip already exist	此用户已经申请过</li>
+						<li>40200	comment delete failed	评删除失败</li>
+						<li>40201	cancel attention failed	取消关注失败</li>
+						<li>40202	already attention	已关注过</li>
+						<li>40203	already praise	已点过赞</li>
+						<li>40204	cancel praise failed	取消赞失败</li>
+						<li>40301	no nickname	无昵称</li>
+						<li>40302	nickname repeat	昵称已存在</li>
+						<li>40303	username or password error	用户名或密码错误</li>
+						<li>40304	password error	密码错误</li>
+						<li>40305	no password	无密码</li>
+						<li>40306	no username	无用户名</li>
+						<li>40307	register error	注册失败</li>
+						<li>40308	update user error	更新用户失败</li>
+						<li>40309	username is exist	用户名已存在</li>
+						<li>40310	no header file	无头像文件</li>
+						<li>40311	add admin error	添加管理员失败</li>
+						<li>40312	delete admin error	删除管理员失败</li>
+						<li>40313	add permission error	添加管理员失败</li>
+						<li>40314	delete permission error	删除权限失败</li>
+					</ul>
+				</li>
+				<li>
+					<h2> 系统级错误：50001 ++ </h2>
+					<ul>
+						<li>50001	System error	系统错误</li>
+						<li>50002	Illegal request	非法请求</li>
+						<li>50003	Request timed out	请求超时</li>
+						<li>50004	Service unavailable	服务暂停</li>
+						<li>50005	Remote service error	远程服务错误</li>
+					</ul>
+				</li>
+			</ul>
+		<% } %>
+	</div>
+</div>

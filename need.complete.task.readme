@@ -1,0 +1,20 @@
+#静态资源md5 done, staic is the same as local
+
+
+#同一个属性的管道不可用2次
+# 请求参数验证
+#静态资源映射目录
+#requirejs不能加载非 amd 资源
+
+#style 相对目录
+
+#行内JS 执行
+
+#项目框架提炼
+
+# ajax 的api封装
+
+# 微博登录
+# 支付宝API
+
+#模版引擎有些问题，变量declare

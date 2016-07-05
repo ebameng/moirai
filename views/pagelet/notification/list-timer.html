@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/static/css/page/notification/list.css">
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+<div class="mod-notification-list">
+ 	<div class="list-header">
+ 		<div class="ui icon input">
+			<input type="text" placeholder="搜索消息">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/admin/notification/publish"  class="ui  button action-paresh">
+			<i class="user icon"></i>
+			添加消息
+		</a>
+ 	</div>
+ 	<h3>定时系统消息</h3>
+	<table class="ui  column table segment">
+		<thead>
+			<tr>
+				<th>图片</th>
+				<th>定时时间</th>
+				<th>描述</th> 
+				<th>跳转类型</th>
+				<th>跳转目标</th>
+				<th>操作</th>
+			</tr>
+		</thead> 
+		<tbody>
+			<% for(var i = 0; i < list.length; i ++) { %>
+			<%
+				var item = list[i];
+				switch(item.type) {
+					case 1: 
+						jumpType = '个人页';
+					break;
+
+					case 2: 
+						jumpType = '标签页';
+					break;
+					case 3: 
+						jumpType = '发布';
+					break;
+					case 4: 
+						jumpType = 'h5链接';
+					break;
+				}				
+			%>
+			<tr class="item" data-id="${item.id}">
+				<td class="images">
+					<img src="${item.url}" alt="">
+				</td>
+				<td>${item.createDate|timeFormat}</td>
+				<td class="content">${item.content|stripHTML}</td>
+				<td>${jumpType}</td>
+				<td class="jump">${item.jump|stripHTML}</td>
+				<td>
+					<a data-id="${item.id}" class="del-timer" href="void:javascript(0)">删除</a> <br/>
+				</td>
+			</tr>
+			<% } %>
+		</tbody>  
+	</table>
+
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<script type="text/javascript" src="/static/js/mod/notification/list.js"></script>
+

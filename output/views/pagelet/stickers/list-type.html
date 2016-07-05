@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/css/page/stickers/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+<div class="mod-stickers-list mod" >
+	<div class="list-header">
+		<div class="ui icon input">
+			<input type="text" placeholder="搜索贴纸">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/stickers/publish"  class="ui down button action-paresh">
+			<i class="tag icon"></i>
+			添加贴纸
+		</a>
+	</div>
+	<ul>
+		<%
+			var list = data['stickerTypes'];
+		%>
+		<% for(var i =0; i < list.length; i++) {%>
+		<%
+			var item = list[i]; 
+		%>
+		<li class="item" data-id="${item.id}" data-cachekey="${item.cacheKey}" data-weight="${item.weight}">
+			<div class="img-wrap">
+				<a href="/stickers/detail/list?stId=${item.id}"><img class="lazy-load" src="${item.cacheUrl}" alt=""></a>
+			</div>
+				<p class="name">${item.name}
+				</p>
+				<span class="update-type"><i class="edit icon"></i></span>
+		</li>
+		<% } %>
+	</ul>
+	
+</div>
+<link rel="stylesheet" href="/static/plugins/aui-artDialog/css/ui-dialog.css">
+<script src="/static/plugins/aui-artDialog/dist/dialog-min.js"></script>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/stickers/list.js"></script>

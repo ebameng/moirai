@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/static/css/page/admin/list.css">
+<div class="mod-admin-list mod" >
+ 	<div class="header">
+ 		<div class="ui icon input">
+			<input type="text" placeholder="搜索管理员">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/admin/publish"  class="action-paresh ui down button">
+			<i class="user icon"></i>
+			添加管理员
+		</a>
+		<div class="btn-alloc-role ui down button">
+			<i class="user icon"></i>
+			<i class="fork icon"></i>
+			<span>分配权限</span>
+		</div>
+ 	</div>
+ 	<div class="container">
+ 		<div class="list">
+ 			<table class="ui  column table segment">
+ 				<thead>
+ 					<tr>
+ 						<th>编号</th>
+ 						<th>账号</th>
+ 						<th>昵称</th>
+ 						<th>电话</th>
+ 						<th>邮件</th>
+ 						<th>级别</th>
+ 						<th>操作</th>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<%
+ 						var admin_list = adminData['list'];
+ 						var user_list = userData;
+ 					%>
+ 					<% for(var i = 0; i < admin_list.length; i ++) { %>
+ 					<%
+ 						var item = admin_list[i];
+ 						var index = startNumber + i + 1;
+ 						var itemUser = user_list[i];
+ 					%>
+ 					<tr class="item" data-id="${item.id}">
+ 						<td>${index}</td>
+ 						<td>${item.username}</td>
+ 						<td class="nickname">${itemUser.nickname}</td>	
+ 						<td>${item.phone|ensure}</td>
+ 						<td>${item.email|ensure}</td>
+ 						<td>${item.level}</td>
+ 						<td>
+ 							<a class="btn-preview-roles" href="void:javascript(0)">查看权限</a>
+						</td>
+ 					</tr>
+ 					<% } %>
+ 				</tbody>
+ 			</table>
+ 			<%include name="common/widgets/pagenavi.html" var="page" /%>
+ 		</div>	
+ 		
+ 	</div>
+</div>
+
+<script src="/static/js/base/zepto-dnd.js"></script>
+<script src="/static/js/mod/admin/list.js"></script>
+

@@ -1,0 +1,10 @@
+module.exports = function anonymous($_data_) {
+var $_output_ = '';var __$utils = this,$helper = this,__$include = __$utils.include,__LOCAL__ = this.__LOCAL__;
+with($_data_ || {}) {
+var $_output_ = '';$_output_ += '<link rel="stylesheet" href="http://nuoya.591ku.com/static/css/page/label/publish-87abc796.css">\n<div class="mod-label-publish">\n\t<form action="/label/create" method="post" class="create-label">\n\t';
+$_output_ += __$include('./__cache__/common/widgets/input-image-preview.html', undefined);
+$_output_ += '\n\t<div class="row">\n\t\t<div class="ui icon input">\n\t\t\t<input type="text" name="name" placeholder="名称">\n\t\t\t<i class="home  icon"></i>\n\t\t</div>\n\t</div>\n\t<div class="row">\n\t\t<h3 class="label">类型</h3>\n\t\t<div class="ui buttons resource-type">\n\t\t\t<div class="ui button positive common" data-id="0">普通</div>\n\t\t\t<div class="or"></div>\n\t\t\t<div class="ui  button location" data-id="1">位置</div>\n\t\t\t<div class="or"></div>\n\t\t\t<div class="ui  button character" data-id="2">人物</div>\n\t\t\t<div class="or"></div>\n\t\t\t<div class="ui  button feeling" data-id="3">心情</div>\n\t\t\t<div class="or"></div>\n\t\t\t<div class="ui  button activity" data-id="4">活动</div>\n\t\t</div>\n\t</div>\n\t<div class="row brand">\n\t\t<div class="ui buttons brand-type">\n\t\t\t<div class="ui button" data-id="1">品牌</div>\n\t\t\t<div class="or"></div>\n\t\t\t<div class="ui button positive" data-id="0">非品牌</div>\n\t\t</div>\n\t</div>\n\t<div class="row" style="width: 400px;">\n\t\t<div class="ui form">\n\t\t\t<textarea style="min-height: 48px;height: 48px; width: 100%;" placeholder="说点什么......" name="content"></textarea>\n\t\t</div>\n\t</div>\n\t<div class="row">\n\t\t<div class="ui icon input">\n\t\t\t<input type="number" name="weight" placeholder="权重" value="1">\n\t\t\t<i class="thumbs up  icon"></i>\n\t\t</div>\n\t</div>\n\t</form>\n\t<div class="row">\n\t\t<div class=" btn-submit positive ui button">提交</div>\n\t</div>\n</div>\n\n\n<script src="http://nuoya.591ku.com/static/js/mod/label/publish-71b648dc.js"></script>';
+}
+return new String($_output_);
+
+}

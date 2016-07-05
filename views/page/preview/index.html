@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>看图</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+		<link rel="shortcut icon" type="image/x-icon" href="/static/img/fav.png" />
+		<link rel="stylesheet" href="/static/css/page/atlas/preview.css" />
+		<script>
+		var _NA_ = {};
+		_NA_['images'] = [
+			<%
+				var len = images.length;
+			%>
+			<% for(var i=0; i< len; i++) {
+				if (i +1 < len) {
+			%>
+				"${images[i]['url']}",
+			<% } else { %>
+				"${images[i]['url']}"
+			<% }} %>
+		];
+		_NA_['tuID'] = '${id}';
+		_NA_['api_domain'] = 'http://${__LOCAL__.api_domain}';
+		</script>
+		
+	</head>
+	<body >
+		<div class="followers">
+			<div class="pull">.<br>.<br>.<br>.<br>.</div>
+			<ul class="robot">
+				<%
+				for(var i = 0; i<users.length; i++) {
+				var item = users[i];
+				%>
+				<li class="robotman" data-id='${item.id}'>
+					<img src="${item.headUrl}" alt="">
+					<input type="hidden" class="name" name="name" value="${item.nickname}">
+				</li>
+				<% } %>
+				<li class="change-next">换一批</li>
+			</ul>
+		</div>
+		<div class="img-box">
+			<div class="img-box-header">
+				<h2 class="from">
+				<%
+				var portraitUrl = headUrl || '/static/img/icons/user.png';
+				var desc = basic.content || '暂无描述';
+				desc = desc.replace(/(<([^>]+)>)/ig,"");
+				%>
+				<img src="${portraitUrl}"  title="${desc}" data-id="${uid}">
+				<span class="name">${basic.nickname|trim}</span>
+				<span class="time">${basic.createDate|whenHappend|trim}</span>
+				<% if(basic.location) { %>
+				<span class="location">${basic.location|trim}</span>
+				<% } %>
+				</h2>
+				<%
+					var overLength = 32;
+					var ellipsis = desc.length > overLength ? '...' : '';
+					var shortDesc = desc.slice(0, overLength) + ellipsis;
+				%>
+				<h2 class="desc">
+					${shortDesc}
+					<p class="desc-detail" >${desc}</p>
+				</h2>
+				<ul class="menu">
+					
+					<% if(basic.praiseNum) { %>
+					<li>赞${basic.praiseNum}</li>
+					<% } %>
+					<% if(comments.length) { %>
+					<li>评论${comments.length}</li>
+					<% } %>
+					<% if(labels.length) { %>
+					<li class="menu-label">
+						标签${labels.length}
+						<div class="labels">
+							<% for(var i=0; i<labels.length; i++) { %>
+								<%
+								var label = labels[i];
+								%>
+								<div class="label">
+									${label['name']}
+								</div>
+								<% } %>
+							</div>
+						</li>
+						<% } %>
+						<% if(links.length) { %>
+						<li class="menu-label">
+							链接${links.length}
+							<div class="links">
+								<% for(var i=0; i<links.length; i++) { %>
+								<%
+								var link = links[i];
+								%>
+								<div class="link">
+									<a target="_blank" href="${link['url']}">${link['name']}</a>
+								</div>
+								<% } %>
+							</div>
+						</li>
+						<% } %>
+						
+					</ul>
+					<!-- <div class="close">x</div> -->
+				</div>
+				<div class="img-box-main">
+					<div class="speak-here" ng-controller="CommentListCtrl">
+						<div class="list">
+							<ul>
+								<% if(comments.length == 0) { %>
+								<li>
+									<div class="desc" style="height: 18px;">暂无评论 <img src="/static/img/icons/exclamation.png" style="width: 18px; vertical-align:middle;display: inline;margin: -2px 0 0 4px;" alt=""></div>
+								</li>
+								<% } else { %>
+								<% for(var i=0; i<comments.length; i++) { %>
+								<%
+								var commentItem = comments[i];
+								%>
+								<% if(commentItem['replyUser']) { %>
+								<li class="item" data-uid="${commentItem['userId']}">
+									<img class="comment-head" src="${commentItem['headUrl']}" alt="" />
+									<div class="cmt">
+										<div class="origin">
+											<p class="user"><span class="speaker">${commentItem['nickname']|trim}</span><span style="color:blue;">回复</span>${commentItem['replyUser']['nickname']|trim} </p>
+											<p class="time">${commentItem['createDate']|whenHappend}</p>
+										</div>
+										<div class="content"> ${commentItem['content']|trim} </div>
+									</div>
+									<p class="close" data-id="${commentItem['id']}">删除</p>
+								</li>
+								<% } else { %>
+								<li class="item" data-uid="${commentItem['userId']}">
+									<img class="comment-head" src="${commentItem['headUrl']}" alt="" />
+									<div class="cmt">
+										<div class="origin">
+											<p class="user"><span class="speaker">${commentItem['nickname']|trim} </span></p>
+											<p class="time">${commentItem['createDate']|whenHappend}</p>
+										</div>
+										<div class="content"> ${commentItem['content']|trim} </div>
+									</div>
+									<p class="close" data-id="${commentItem['id']}">删除</p>
+								</li>
+								<% } %>
+								<% } %>
+								<% } %>
+								
+							</ul>
+							
+						</div>
+						<div class="comment" >
+							<textarea name="" id="" cols="30" rows="10"></textarea>
+							<div class="btn-comment">评论</div>
+						</div>
+					</div>
+					<div class="img">
+						<img src="${basic.coverImage['url']}" alt="" /><br/>
+						
+					</div>
+					
+					<aside class="thumbs">
+						<div class="wrap">
+							<ul>
+								<%
+								var len = images.length;
+								%>
+								<% for(var i=0; i< len; i++) { %>
+								<%
+								var itemImg = images[i];
+								var size = (itemImg['size'] || "100*100").split("*");
+								var width = size[0];
+								var height = size[1];
+								var ratio = width / (height / 1);
+								
+								%>
+								<li>
+									<img src="${images[i]['url']}" alt="" data-ratio="${ratio}"/>
+								</li>
+								<% } %>
+							</ul>
+						</div>
+					</aside>
+				</div>
+			</div>
+			<script type="text/javascript"  src="/static/js/base/jquery-2.1.1.js"></script>
+			<script type="text/javascript"  src="/static/js/base/underscore.js"></script>
+			<script type="text/javascript"  src="/static/js/libs/utils.js"></script>
+			
+			<%block name="block_footer_js"%>
+			<script type="text/javascript"  src="/static/js/mod/atlas/preview.js"></script>
+			<%/block%>
+			<link rel="stylesheet" href="/static/css/lib/animate.css">
+			
+		</body>
+	</html>

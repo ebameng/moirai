@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/static/css/page/atlas/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+
+<div class="mod-atlas-list">
+	<%
+		var tabName = tabName || 'all';
+		var tabAll = '';
+		var tabMine = '';
+		var tabTimer = '';
+		var tabPopout = '';
+		if (tabName == 'mine') {
+			tabMine = 'on';
+		} else if (tabName == 'timer') {
+			tabTimer = 'on';
+		} else if (tabName == 'top') {
+			tabPopout = 'on';
+		} else {
+			tabAll = 'on'
+		}
+	%>
+ 	<%
+		var list = data['list'];
+	%>
+	<ul  >
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+			var item = list[i];
+			var index = i+1;
+			var recordStatus = 'ok';
+			var size = item.coverImage['size'].split('*');
+			var width = size[0], height = size[1] || 100;
+			var ratio = width / height;
+			var imgStyle = ";width: 100%; height: auto;"
+			if(ratio <= 1) {
+				imgStyle = ";width: auto; height: 100%;"
+			}
+
+		%>
+		<li class="item" data-id="${item.id}">
+			<a xx title="查看图集" class="preview"> 
+				<img class="lazy-load" style="${imgStyle}" data-ratio="${ratio}"   data-original="${item.coverImage.thumb['url']}"  alt="">
+				<% if (tabTimer) { %>
+				<div class="timer-counter">
+					<i></i><span>${item.createDate|timeFormat}</span>
+				</div>
+				<% } %>
+				<div class="text">
+					<p class="delete ${tabName}" title="删除" data-id="${item.id}"></p>
+					<div class="text-content">
+						<div class="origin">
+							<p class="num"> 共${item['imageNum']}张 </p>
+							<p class="loc"> ${item['location']} </p>
+						</div>
+						<h2>
+							<p class="name"><i></i>${item.nickname|trim}</p>
+							<% if (tabTimer == '' ) { %>
+								<p class="time"><i></i>${item.createDate|whenHappend}</p>
+							<% } %>
+						</h2>
+						<p class="desc">${item['content']|stripHTML}</p>
+						<div class="op">
+							<div class="fav"><span>${item['praiseNum']}</span></div>
+							<div class="speak"> <span>${item['commentNum']}</span> </div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</li>
+		<% } %>
+	</ul>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script src="/static/js/mod/atlas/list.js"></script>

@@ -1,0 +1,352 @@
+@import "../../liblus/_css3";
+@import "../../liblus/widget";
+
+
+// start file
+.mod-publish {
+	box()
+	.file-box {
+		box();
+		width: 220px;
+		height: 280px;
+	}
+	.clear {
+		clear()
+	}
+	.sub-left {
+		width: 400px;
+		position: relative;
+		.container {
+			width: 400px;
+			height: 100%;
+			box()
+			orient()
+			pack()
+			align()
+			overflow: auto;
+			left: $_sidebarWidth;
+			top: $_headerHeight;
+			background: #259998;
+			position: fixed;
+			padding: 10px;
+			box-sizing(border-box);
+			.progress-box {
+				position: relative;
+				margin-bottom: 2px;
+				width: 100%;
+				opacity: 0.4;
+				.destroy {
+					size(100%);
+					box()
+					align();
+					pack()
+					font-size: 60px;
+					color: #fff;
+					position: absolute;
+					left: 0;
+					top: 0;
+					background: red;
+					text-align: center;
+				}
+				.stick {
+					size(100%)
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 0;
+					background: green;
+					opacity: 0.628;
+					&.warn {
+						background: orange;
+					}
+				}
+				.wrap {
+					width: 100%;
+				}
+				img {
+					display: block;
+				}
+				&.cover {
+					opacity: 1;
+				}	
+				&:last-child {
+					margin: 0;
+				}
+				.label-item {
+					position: absolute;
+					box-shadow: 0 0 20px 2px #fff;
+					-webkit-border-top-right-radius: 3px;
+					-webkit-border-bottom-right-radius: 3px;
+					-webkit-border-top-left-radius: 90px;
+					-webkit-border-bottom-left-radius: 90px;
+					top: 2px;
+					cursor: move;
+					white-space: nowrap;
+					left: 2px;
+					padding: 4px  20px 4px 6px;
+					background: #666;
+					color: #fff;
+					.dot {
+						cursor: pointer;
+						border: 1px solid #e8e8e8;
+						width: 10px;
+						height: 10px;
+						position: absolute;
+						top: 8px;
+						left: -10px;
+						border-radius: 100%;
+						background: #fff;
+						-webkit-animation: flicker  1s infinite;
+						-o-animation: flicker  1s infinite;
+					}
+					&.label-item-right {
+						-webkit-border-top-right-radius: 90px;
+						-webkit-border-bottom-right-radius: 90px;
+						-webkit-border-top-left-radius: 3px;
+						-webkit-border-bottom-left-radius: 3px;
+						.dot {
+							left: auto;
+							right: -10px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.sub-right {
+		flex(1);
+	}
+	.label-search-box {
+		position: relative;
+		
+	}
+	.drop-zone {
+		box();
+		align(center);
+		pack(center);
+		width: 274px;
+		border: 2px dashed #dfdfdf; 
+		border-radius: 6px;
+		position: relative;
+		background: url($imgPath + '/icons/image-upload.png') no-repeat center 40px;
+		
+		&.webuploader-dnd-over {
+			border: 2px dashed #999; 
+		}
+		&:hover {
+			.tips {
+				color: #999
+			}
+		}
+		.tips {
+			text-align: center;
+			color: #eee;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			width: 100%;
+			font-size: 18px;
+		}
+		.btnAddFiles {
+			@extend .class-btn-add-files
+
+		}
+
+	}
+	.row {
+		padding: 10px 10px; 
+		margin-bottom: 10px;
+		border-radius: 3px;
+		background: #fff;
+	}
+	.row h2.label {
+		margin: 0px 0 6px;
+	}
+	.grouped {
+		clear();
+		margin-top: 8px;
+	}
+	.label-history-box {
+		&.show {
+			display: block;
+		}
+		.close {
+			size(30px);
+			position: absolute;
+			left: -(@width/2);
+			top: -(@height/2);
+			border-radius: 100%;
+			background: #B0841D;
+			content: "";
+			text-align: center;
+			font-size: 28px;
+			line-height: @height;
+			cursor: position;
+		}
+		z-index: 9999;
+		position: fixed;
+		right: -8px;
+		bottom: -8px;
+		top: auto;
+		background: #B0841D
+		display: none;
+		
+		border-radius: 8px;
+		padding: 12px;
+		color: #fff;
+		
+		.main {
+			width: 400px;
+			height: 300px;
+			.label-item {
+				float: left;
+				border: 1px dotted #e8e8e8;
+				padding: 4px;
+				margin: 0 6px 6px 0;
+				border-radius: 4px;
+				color: #fff;
+				&:hover {
+					color: yellow;
+				}
+			}
+		}
+		.footer {
+			color: #A8A5A5;
+			padding-bottom: 0px;
+		}
+	}
+	.label-item {
+		&.marked {
+			background: orange;
+			color: #fff;
+		}
+		float: left;
+		padding: 4px;
+		margin: 0 6px 6px 0;
+		color: #DEDADA;
+		border-radius: 4px;
+		background: #333;
+		box-shadow(0 0 6px 1px #fff);
+		
+	}
+	.btn-add-label, . btn-fav-label {
+		margin-top: 1px;
+		cursor: pointer;
+		background: #999;
+		color: #fff;
+		border: none;
+	}
+	.link-box {
+		clear()
+		.form {
+			.field {
+				margin: 0;
+				input {
+					border-radius: 12px;	
+					border: none;
+				}
+			}
+		}
+	}
+	 
+	.text-link {
+		background: #f2f2f2;
+		padding: $boxPadding;
+		border-radius: 6px;
+		float: left;
+		width: 240px;
+		margin: 0 10px 10px 0;
+		position: relative;
+		&:hover .destroy{
+				display: block;
+		}
+		.destroy {
+			size(16px);
+			position: absolute;
+			right: -6px;
+			top: -6px;
+			background: url($imgPath + '/icons/close.png') no-repeat center center;
+			background-size: 16px;
+			display: none;
+			
+		}
+		input {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 4px;
+			font-size: 14px;
+			margin: 0;
+			border: none;
+			display: block;
+			&:first-child {
+				margin-bottom: 1px;
+			}
+		}
+	}
+	 
+	.clear-timer {
+		margin-left: 10px;
+		&:hover {
+			color: red;
+			cursor: default;
+			position: relative;
+		}
+	}
+	.horizontal {
+		margin: 24px;
+		padding: 20px;
+		border-top: 1px solid #e8e8e8;
+		box()
+		align()
+		.item {
+			margin: 0 20px;
+		}
+	}
+}
+
+.ui-suggestion {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 100%;
+	margin-top: 6px;
+	box-shadow: 0 1px 16px 0 #000;
+	z-index: 1000;
+	background: #fff;
+	max-height: 400px;
+	overflow: auto;
+	.item {
+		box()
+		align()
+		padding: 8px 6px;
+		border-bottom: 1px solid #e8e8e8;
+		&:last-child{
+			margin-bottom: 20px;
+		}
+		img {
+			size(36px);
+			margin-right: 6px;
+			border-radius: 3px;
+		}
+	}
+}
+//animation 
+@-webkit-keyframes flicker {
+	0% {
+		-webkit-box-shadow: 0 0 5px 4px rgba(255,255,255,0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 5px 4px rgba(131,241,241,0.7);
+	}
+}
+
+@-o-keyframes flicker {
+	0% {
+		-o-box-shadow: 0 0 5px 5px rgba(255,255,255,0);
+	}
+	100 {
+		-o-box-shadow: 0 0 5px 5px rgba(131,241,241,0.7);
+	}
+}
+
+

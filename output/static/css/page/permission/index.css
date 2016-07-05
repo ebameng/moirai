@@ -1,0 +1,255 @@
+.class-page-navi {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 16px 0;
+  height: 32px;
+}
+.class-page-navi .start,
+.class-page-navi .end,
+.class-page-navi .prev,
+.class-page-navi .next,
+.class-page-navi .bar {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #3e3e3e;
+  text-align: center;
+  border: solid 1px #ededed;
+  font-weight: 700;
+}
+.class-page-navi .prev,
+.class-page-navi .bar {
+  border-right: none;
+}
+.class-page-navi .start,
+.class-page-navi .end {
+  margin-right: 4px;
+  padding: 0 4px;
+  width: auto;
+}
+.class-page-navi .bars {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .pin {
+  background: #ededed;
+  color: #999;
+}
+.class-page-navi .summary {
+  margin-left: 6px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .summary .total {
+  margin-right: 2px;
+}
+.class-page-navi .summary .port input {
+  height: 100%;
+}
+.file-picker input[type="file"] {
+  display: none;
+}
+.class-btn-add-files {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #20a7e9;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+.class-btn-add-files input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+.class-btn-add-files .text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.mod-permission-manage {
+  height: 100%;
+}
+.mod-permission-manage .header {
+  box-shadow: 0 0 22px 4px #898986;
+  padding: 10px;
+  height: 50px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.mod-permission-manage .header .menu-role {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+.mod-permission-manage .container {
+  min-height: 200px;
+}
+.mod-permission-manage .sub-mod-role,
+.mod-permission-manage .sub-mod-url {
+  float: left;
+  width: 68%;
+  padding: 5px;
+  height: 100%;
+}
+.mod-permission-manage .panel {
+  height: 100%;
+  padding: 0 20px 10px 10px;
+  overflow-y: scroll;
+}
+.mod-permission-manage .item.url {
+  position: relative;
+}
+.mod-permission-manage .item.url .menu {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  background: #ffa500;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  cursor: pointer;
+}
+.mod-permission-manage .sub-mod-url {
+  width: 32%;
+  height: 100%;
+}
+.mod-permission-manage .sub-mod-url .panel {
+  padding: 0;
+}
+.mod-permission-manage .sub-mod-url .title {
+  padding-bottom: 8px;
+  padding: 8px;
+  background: #ff3e3e;
+  color: #ff0;
+  padding: 8px;
+}
+.mod-permission-manage .sub-mod-url .title p {
+  font-size: 13px;
+}
+.mod-permission-manage .sub-mod-url .panel {
+  background: #fff;
+}
+.mod-permission-manage .sub-mod-url .panel ul {
+  padding-bottom: 20px;
+}
+.mod-permission-manage .sub-mod-url .panel ul::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-permission-manage .sub-mod-url .panel ul li {
+  display: block;
+  font-size: 12px;
+  margin: 16px;
+  margin-bottom: 0;
+  padding: 4px 8px;
+  background: #e9e7e7;
+  box-shadow: 0px 0px 2px #999;
+}
+.mod-permission-manage .sub-mod-url .panel ul li:hover {
+  background: #ff3e3e;
+  color: #ff0;
+}
+.mod-permission-manage .sub-mod-url .panel ul li h4 {
+  line-height: 26px;
+  overflow: hidden;
+  font-size: 13px;
+}
+.mod-permission-manage .sub-mod-url .panel ul li .name {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  width: 72%;
+}
+.mod-permission-manage .sub-mod-url .panel ul li.dragging {
+  color: #fff;
+  opacity: 0.62;
+  background: #008000;
+}
+.mod-permission-manage .sub-mod-role {
+  margin-right: 0;
+}
+.mod-permission-manage .sub-mod-role .col {
+  width: 50%;
+  float: left;
+}
+.mod-permission-manage .sub-mod-role .col:last-child {
+  padding-left: 10px;
+}
+.mod-permission-manage .sub-mod-role h2 {
+  font-size: 14px;
+  position: relative;
+}
+.mod-permission-manage .sub-mod-role h2 .menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.mod-permission-manage .sub-mod-role .item {
+  background: #fff;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0px 10px 1px #999;
+  position: relative;
+}
+.mod-permission-manage .sub-mod-role .item.editable h2 .menu {
+  display: block;
+}
+.mod-permission-manage .sub-mod-role .item h2 {
+  padding: 8px;
+  color: #edddbd;
+  background: #32a8a8;
+}
+.mod-permission-manage .sub-mod-role .item h2 p {
+  font-size: 13px;
+}
+.mod-permission-manage .sub-mod-role .item ul li {
+  padding: 6px;
+  border-top: 1px solid #e8e8e8;
+  box-shadow: none;
+  border-radius: 0;
+}
+.mod-permission-manage .sub-mod-role .item ul li.empty {
+  padding: 20px;
+  margin: 0;
+  border-radius: 3px;
+  text-align: center;
+  color: #3c3c3e;
+  background: #f8fac8;
+}

@@ -1,0 +1,484 @@
+.class-page-navi {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 16px 0;
+  height: 32px;
+}
+.class-page-navi .start,
+.class-page-navi .end,
+.class-page-navi .prev,
+.class-page-navi .next,
+.class-page-navi .bar {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #3e3e3e;
+  text-align: center;
+  border: solid 1px #ededed;
+  font-weight: 700;
+}
+.class-page-navi .prev,
+.class-page-navi .bar {
+  border-right: none;
+}
+.class-page-navi .start,
+.class-page-navi .end {
+  margin-right: 4px;
+  padding: 0 4px;
+  width: auto;
+}
+.class-page-navi .bars {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .pin {
+  background: #ededed;
+  color: #999;
+}
+.class-page-navi .summary {
+  margin-left: 6px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .summary .total {
+  margin-right: 2px;
+}
+.class-page-navi .summary .port input {
+  height: 100%;
+}
+.file-picker input[type="file"] {
+  display: none;
+}
+.class-btn-add-files,
+.mod-publish .drop-zone .btnAddFiles {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #20a7e9;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+.class-btn-add-files input[type="file"],
+.mod-publish .drop-zone .btnAddFiles input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+.class-btn-add-files .text,
+.mod-publish .drop-zone .btnAddFiles .text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.mod-publish {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.mod-publish .file-box {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  width: 220px;
+  height: 280px;
+}
+.mod-publish .clear::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-publish .sub-left {
+  width: 400px;
+  position: relative;
+}
+.mod-publish .sub-left .container {
+  width: 400px;
+  height: 100%;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-orient: vertical;
+  -o-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  overflow: auto;
+  left: 260px;
+  top: 60px;
+  background: #259998;
+  position: fixed;
+  padding: 10px;
+}
+.mod-publish .sub-left .container .progress-box {
+  position: relative;
+  margin-bottom: 2px;
+  width: 100%;
+  opacity: 0.4;
+}
+.mod-publish .sub-left .container .progress-box .destroy {
+  width: 100%;
+  height: 100%;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  font-size: 60px;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #f00;
+  text-align: center;
+}
+.mod-publish .sub-left .container .progress-box .stick {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  background: #008000;
+  opacity: 0.628;
+}
+.mod-publish .sub-left .container .progress-box .stick.warn {
+  background: #ffa500;
+}
+.mod-publish .sub-left .container .progress-box .wrap {
+  width: 100%;
+}
+.mod-publish .sub-left .container .progress-box img {
+  display: block;
+}
+.mod-publish .sub-left .container .progress-box.cover {
+  opacity: 1;
+}
+.mod-publish .sub-left .container .progress-box:last-child {
+  margin: 0;
+}
+.mod-publish .sub-left .container .progress-box .label-item {
+  position: absolute;
+  box-shadow: 0 0 20px 2px #fff;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-top-left-radius: 90px;
+  -webkit-border-bottom-left-radius: 90px;
+  top: 2px;
+  cursor: move;
+  white-space: nowrap;
+  left: 2px;
+  padding: 4px 20px 4px 6px;
+  background: #666;
+  color: #fff;
+}
+.mod-publish .sub-left .container .progress-box .label-item .dot {
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 8px;
+  left: -10px;
+  border-radius: 100%;
+  background: #fff;
+  -webkit-animation: flicker 1s infinite;
+  -o-animation: flicker 1s infinite;
+}
+.mod-publish .sub-left .container .progress-box .label-item.label-item-right {
+  -webkit-border-top-right-radius: 90px;
+  -webkit-border-bottom-right-radius: 90px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+.mod-publish .sub-left .container .progress-box .label-item.label-item-right .dot {
+  left: auto;
+  right: -10px;
+}
+.mod-publish .sub-right {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+.mod-publish .label-search-box {
+  position: relative;
+}
+.mod-publish .drop-zone {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  width: 274px;
+  border: 2px dashed #dfdfdf;
+  border-radius: 6px;
+  position: relative;
+  background: url("http://nuoya.591ku.com/static/img/icons/image-upload-6b00566e.png") no-repeat center 40px;
+}
+.mod-publish .drop-zone.webuploader-dnd-over {
+  border: 2px dashed #999;
+}
+.mod-publish .drop-zone:hover .tips {
+  color: #999;
+}
+.mod-publish .drop-zone .tips {
+  text-align: center;
+  color: #eee;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  font-size: 18px;
+}
+.mod-publish .row {
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background: #fff;
+}
+.mod-publish .row h2.label {
+  margin: 0px 0 6px;
+}
+.mod-publish .grouped {
+  margin-top: 8px;
+}
+.mod-publish .grouped::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-publish .label-history-box {
+  z-index: 9999;
+  position: fixed;
+  right: -8px;
+  bottom: -8px;
+  top: auto;
+  background: #b0841d;
+  display: none;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+}
+.mod-publish .label-history-box.show {
+  display: block;
+}
+.mod-publish .label-history-box .close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  border-radius: 100%;
+  background: #b0841d;
+  content: "";
+  text-align: center;
+  font-size: 28px;
+  line-height: 30px;
+  cursor: position;
+}
+.mod-publish .label-history-box .main {
+  width: 400px;
+  height: 300px;
+}
+.mod-publish .label-history-box .main .label-item {
+  float: left;
+  border: 1px dotted #e8e8e8;
+  padding: 4px;
+  margin: 0 6px 6px 0;
+  border-radius: 4px;
+  color: #fff;
+}
+.mod-publish .label-history-box .main .label-item:hover {
+  color: #ff0;
+}
+.mod-publish .label-history-box .footer {
+  color: #a8a5a5;
+  padding-bottom: 0px;
+}
+.mod-publish .label-item {
+  float: left;
+  padding: 4px;
+  margin: 0 6px 6px 0;
+  color: #dedada;
+  border-radius: 4px;
+  background: #333;
+}
+.mod-publish .label-item.marked {
+  background: #ffa500;
+  color: #fff;
+}
+.mod-publish .btn-add-label,
+.mod-publish . btn-fav-label {
+  margin-top: 1px;
+  cursor: pointer;
+  background: #999;
+  color: #fff;
+  border: none;
+}
+.mod-publish .link-box::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-publish .link-box .form .field {
+  margin: 0;
+}
+.mod-publish .link-box .form .field input {
+  border-radius: 12px;
+  border: none;
+}
+.mod-publish .text-link {
+  background: #f2f2f2;
+  padding: 6px;
+  border-radius: 6px;
+  float: left;
+  width: 240px;
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+.mod-publish .text-link:hover .destroy {
+  display: block;
+}
+.mod-publish .text-link .destroy {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  background: url("http://nuoya.591ku.com/static/img/icons/close-ec33096c.png") no-repeat center center;
+  background-size: 16px;
+  display: none;
+}
+.mod-publish .text-link input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: 14px;
+  margin: 0;
+  border: none;
+  display: block;
+}
+.mod-publish .text-link input:first-child {
+  margin-bottom: 1px;
+}
+.mod-publish .clear-timer {
+  margin-left: 10px;
+}
+.mod-publish .clear-timer:hover {
+  color: #f00;
+  cursor: default;
+  position: relative;
+}
+.mod-publish .horizontal {
+  margin: 24px;
+  padding: 20px;
+  border-top: 1px solid #e8e8e8;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+}
+.mod-publish .horizontal .item {
+  margin: 0 20px;
+}
+.ui-suggestion {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 100%;
+  margin-top: 6px;
+  box-shadow: 0 1px 16px 0 #000;
+  z-index: 1000;
+  background: #fff;
+  max-height: 400px;
+  overflow: auto;
+}
+.ui-suggestion .item {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.ui-suggestion .item:last-child {
+  margin-bottom: 20px;
+}
+.ui-suggestion .item img {
+  width: 36px;
+  height: 36px;
+  margin-right: 6px;
+  border-radius: 3px;
+}
+@-webkit-keyframes flicker {
+  0% {
+    -webkit-box-shadow: 0 0 5px 4px rgba(255,255,255,0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 5px 4px rgba(131,241,241,0.7);
+  }
+}
+@-o-keyframes flicker {
+  0% {
+    -o-box-shadow: 0 0 5px 5px rgba(255,255,255,0);
+  }
+  100 {
+    -o-box-shadow: 0 0 5px 5px rgba(131,241,241,0.7);
+  }
+}

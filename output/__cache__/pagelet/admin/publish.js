@@ -1,0 +1,10 @@
+module.exports = function anonymous($_data_) {
+var $_output_ = '';var __$utils = this,$helper = this,__$include = __$utils.include,__LOCAL__ = this.__LOCAL__;
+with($_data_ || {}) {
+var $_output_ = '';$_output_ += '<div class="mod-admin-publish">\n\t<form action="/admin/create" method="post">\n\t\t';
+$_output_ += __$include('./__cache__/common/widgets/input-image-preview.html', undefined);
+$_output_ += '\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="用户名" type="text" name="username" value=""  autofocus />\n\t\t\t\t<i class="user icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="密码(最少输入6位...)" type="password" name="raw-password"  />\n\t\t\t\t<i class="lock icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="确认密码" type="password" name="re-password"  />\n\t\t\t\t<i class="lock icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="昵称" type="text" name="nickname"  />\n\t\t\t\t<i class="child icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="邮箱" type="text" name="email"  />\n\t\t\t\t<i class="mail icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="手机号" type="text" name="phone"  />\n\t\t\t\t<i class="sort numeric descending icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui left icon input">\n\t\t\t\t<input placeholder="个性签名" type="text" name="content" />\n\t\t\t\t<i class="comment icon"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="row">\n\t\t\t<div class="ui button btn-submit positive ">\n\t\t\t  <i class="add user icon"></i>\n\t\t\t  添加\n\t\t\t</div>\n\t\t</div>\n\t</form>\n</div>\n\n<style>\n\t.row {\n\t\tmargin: 10px;\n\t}\n</style>\n<script src="http://nuoya.591ku.com/static/js/mod/admin/publish-9d239882.js"></script>\n\n\n\n\t\n ';
+}
+return new String($_output_);
+
+}

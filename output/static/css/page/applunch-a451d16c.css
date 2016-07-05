@@ -1,0 +1,414 @@
+.class-page-navi {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 16px 0;
+  height: 32px;
+}
+.class-page-navi .start,
+.class-page-navi .end,
+.class-page-navi .prev,
+.class-page-navi .next,
+.class-page-navi .bar {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #3e3e3e;
+  text-align: center;
+  border: solid 1px #ededed;
+  font-weight: 700;
+}
+.class-page-navi .prev,
+.class-page-navi .bar {
+  border-right: none;
+}
+.class-page-navi .start,
+.class-page-navi .end {
+  margin-right: 4px;
+  padding: 0 4px;
+  width: auto;
+}
+.class-page-navi .bars {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .pin {
+  background: #ededed;
+  color: #999;
+}
+.class-page-navi .summary {
+  margin-left: 6px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .summary .total {
+  margin-right: 2px;
+}
+.class-page-navi .summary .port input {
+  height: 100%;
+}
+.file-picker input[type="file"] {
+  display: none;
+}
+.class-btn-add-files,
+.mod-sp-startpage .drop-zone .btnAddFiles {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #20a7e9;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+.class-btn-add-files input[type="file"],
+.mod-sp-startpage .drop-zone .btnAddFiles input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+.class-btn-add-files .text,
+.mod-sp-startpage .drop-zone .btnAddFiles .text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.mod-sp-startpage .file-box {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  height: 274px;
+}
+.mod-sp-startpage .label-search-box {
+  position: relative;
+}
+.mod-sp-startpage .label-search-box .suggestion {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  display: none;
+  margin-top: -10px;
+  background: #eee;
+  z-index: 1000;
+  width: 100%;
+  max-height: 400px;
+  overflow: auto;
+}
+.mod-sp-startpage .label-search-box .suggestion ul {
+  display: block;
+  margin: 6px 8px;
+}
+.mod-sp-startpage .label-search-box .suggestion ul li {
+  border-bottom: 1px solid #dfdbdb;
+  padding: 4px;
+  cursor: pointer;
+}
+.mod-sp-startpage .label-search-box .suggestion ul li:hover {
+  background: #fff;
+  color: #333;
+}
+.mod-sp-startpage .label-search-box .suggestion ul li:last-child {
+  border: none;
+}
+.mod-sp-startpage .label-search-box .suggestion-loading {
+  width: 32px;
+  height: 32px;
+  margin-top: 1px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  background: url("http://nuoya.591ku.com/static/img/icons/loading-1d21ac9d.gif") no-repeat center center;
+  background-size: 24px;
+}
+.mod-sp-startpage .label-search-box .append {
+  height: 14px;
+  line-height: 14px;
+  margin: 4px;
+  background: #fff;
+  color: #333;
+  padding: 2px;
+}
+.mod-sp-startpage .drop-zone {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  width: 274px;
+  border: 2px dashed #dfdfdf;
+  border-radius: 6px;
+  position: relative;
+  background: url("http://nuoya.591ku.com/static/img/icons/image-upload-6b00566e.png") no-repeat center 40px;
+}
+.mod-sp-startpage .drop-zone.webuploader-dnd-over {
+  border: 2px dashed #999;
+}
+.mod-sp-startpage .drop-zone:hover .tips {
+  color: #999;
+}
+.mod-sp-startpage .drop-zone .tips {
+  text-align: center;
+  color: #eee;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  font-size: 18px;
+}
+.mod-sp-startpage .row h2.label {
+  margin: 0px 0 6px;
+}
+.mod-sp-startpage .grouped::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-sp-startpage .label-history-box {
+  z-index: 9999;
+  position: fixed;
+  right: -8px;
+  bottom: -8px;
+  top: auto;
+  background: #808080;
+  display: none;
+  overflow: auto;
+  border-radius: 8px;
+  padding: 12px;
+  color: #fff;
+}
+.mod-sp-startpage .label-history-box.show {
+  display: block;
+}
+.mod-sp-startpage .label-history-box .checkbox-item label {
+  color: #fff;
+}
+.mod-sp-startpage .label-history-box .main {
+  width: 400px;
+  height: 300px;
+}
+.mod-sp-startpage .label-history-box .main .label {
+  float: left;
+  border: 1px dotted #e8e8e8;
+  padding: 4px;
+  margin: 0 6px 6px 0;
+  border-radius: 4px;
+  color: #fff;
+}
+.mod-sp-startpage .label-history-box .main .label:hover {
+  color: #333;
+}
+.mod-sp-startpage .label-history-box .footer {
+  color: #a8a5a5;
+  padding-bottom: 0px;
+}
+.mod-sp-startpage .checkbox-item {
+  float: left;
+  border: 1px dotted #e8e8e8;
+  padding: 4px;
+  margin: 0 6px 6px 0;
+  border-radius: 4px;
+}
+.mod-sp-startpage .checkbox-item.marked {
+  border: 1px dotted #ffa500;
+}
+.mod-sp-startpage .checkbox-item.on {
+  border: none;
+  background: #333;
+  border: 1px solid #333;
+}
+.mod-sp-startpage .checkbox-item.on label {
+  color: #fff !important;
+}
+.mod-sp-startpage .checkbox-item-add,
+.mod-sp-startpage .btn-mark-label {
+  margin-top: 1px;
+  cursor: pointer;
+  background: #999;
+  color: #fff;
+  border: none;
+}
+.mod-sp-startpage .link-box::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-sp-startpage .link-box .form .field {
+  margin: 0;
+}
+.mod-sp-startpage .link-box .form .field input {
+  border-radius: 12px;
+  border: none;
+}
+.mod-sp-startpage .add-text-link {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  background: #f2f2f2;
+  border-radius: 6px;
+  margin: 0 10px 10px 0;
+  float: left;
+  height: 80px;
+  width: 80px;
+  font-size: 60px;
+  color: #fff;
+  cursor: pointer;
+  background: url("http://nuoya.591ku.com/static/img/icons/add-23d7c85f.png") no-repeat center center;
+}
+.mod-sp-startpage .add-text-link:hover {
+  background-color: #eee;
+}
+.mod-sp-startpage .text-link {
+  background: #f2f2f2;
+  padding: 6px;
+  border-radius: 6px;
+  float: left;
+  width: 240px;
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+.mod-sp-startpage .text-link:hover .destroy {
+  display: block;
+}
+.mod-sp-startpage .text-link .destroy {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  background: url("http://nuoya.591ku.com/static/img/icons/close-ec33096c.png") no-repeat center center;
+  background-size: 16px;
+  display: none;
+}
+.mod-sp-startpage .text-link input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: 14px;
+  margin: 0;
+  border: none;
+  display: block;
+}
+.mod-sp-startpage .text-link input:first-child {
+  margin-bottom: 1px;
+}
+.mod-sp-startpage .pre-box {
+  padding: 6px;
+  width: 100px;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+.mod-sp-startpage .pre-box .progress-box {
+  float: left;
+  margin: 0 4px 4px 0;
+  background: #f2f2f2;
+  position: relative;
+  padding: 6px;
+  height: 118px;
+  width: 118px;
+}
+.mod-sp-startpage .pre-box .progress-box .wrap {
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+}
+.mod-sp-startpage .pre-box .progress-box .wrap .close {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: url("http://nuoya.591ku.com/static/img/icons/close-ec33096c.png") no-repeat center center;
+  background-size: 16px;
+  z-index: 99;
+  cursor: pointer;
+}
+.mod-sp-startpage .pre-box .progress-box .progress {
+  position: absolute;
+  padding: 0;
+  height: 20px;
+  width: 100%;
+  top: 100%;
+  border: none;
+  height: 10px;
+  border-radius: 0;
+  background: rgba(33,33,33,0.62);
+  left: 0;
+  color: #fff;
+}
+.mod-sp-startpage .pre-box .progress-box .progress .bar {
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+}
+.mod-sp-startpage .pre-box .progress-box .progress.red {
+  background: #f00 !important;
+}
+.mod-sp-startpage .pre-box .progress-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mod-sp-startpage .clear-timer {
+  margin-left: 10px;
+}
+.mod-sp-startpage .clear-timer:hover {
+  color: #f00;
+  cursor: default;
+  position: relative;
+}

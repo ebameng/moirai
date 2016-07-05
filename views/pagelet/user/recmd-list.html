@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/static/css/page/user/list.css">
+
+<div class="mod-user-list">
+	<ul class="list" >
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+			var item = list[i];
+		%>
+
+		<li class="item" data-id="${item['id']}">
+			<div class="img-wrap">
+				<img class="lazy-load" data-original="${item['headUrl']}" alt="" />
+			</div>
+			<div class="info">
+				${item['nickname']}
+			</div>
+		</li>
+		<% } %>
+	</ul>
+</div>
+ 
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+ 
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/user/recommend.js"></script>

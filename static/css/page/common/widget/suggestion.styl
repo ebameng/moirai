@@ -1,0 +1,38 @@
+@import "../../../liblus/_css3";
+@import "../../../liblus/widget";
+
+.ui-suggestion {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 100%;
+	margin-top: 6px;
+	box-shadow: 0 1px 16px 0 #000;
+	z-index: 1000;
+	background: #fff;
+	max-height: 400px;
+	overflow: auto;
+	.item {
+		box()
+		align()
+		padding: 8px 6px;
+		border-bottom: 1px solid #e8e8e8;
+		img {
+			size(36px);
+			margin-right: 6px;
+		}
+		.name {
+			flex(1)
+		}
+		p {
+			size(28px)
+			transition(all 0.62s ease-in-out); 
+			background: url($imgPath + '/icons/add1.png') no-repeat center center;
+			background-size: 10px;
+			&:hover {
+				transform(rotate(540deg) scale(1.4, 1.4));
+			}
+		}
+	}
+}
+

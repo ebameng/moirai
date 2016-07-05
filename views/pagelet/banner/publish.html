@@ -1,0 +1,38 @@
+<link href="/static/css/page/banner/publish.css">
+<div class="mod-banner">
+	<form action="/banner/create" method="post" id="mod-banner">
+		
+		<div class="row lunch-image">
+			<%include 'common/widgets/input-image-preview'  '{name: "image"}' %>
+		</div>
+
+		<div class="row form ui" >	
+			<div class="field">
+				<div class="ui icon input">
+					<input type="text" placeholder="目标链接" name="jumpUrl">
+					<i class="linkify icon"></i>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui right icon input">
+					<input type="number" min="1" placeholder="权重" name="weight">
+					<i class="resize vertical icon"></i>
+				</div>
+			</div>
+		</div>
+	
+		<div class="field">
+			<div class="ui buttons disable-status">
+				<div class="ui button positive" data-id="0">激活</div>
+				<div class="or"></div>
+				<div class="ui button" data-id="1">禁用</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 20px;">
+			<div class="ui btn-submit primary button">提交</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="/static/js/mod/banner/publish.js"></script>

@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/static/css/page/spider/pinsta.css">
+<style>
+	.center {
+		padding: 0;
+	}
+	#main .content {
+		margin: 0;
+	}
+	
+</style>
+<div class="mod-spider-pinsta">
+	<div class="two fields">
+		<div class="ui icon input fluid url">
+			<input type="text" class="input-pinsta-user" placeholder="pinsta.me/someone">
+			<i class="paw icon"></i>
+		</div>
+	</div>
+	<br>
+	<div class="ui button btn-submit">
+		<i class="bug icon"></i>
+		新建爬虫
+	</div>
+	<div class="ui buttons btn-switch">
+		<div class="ui button btn-on " data-state="on">开启上传</div>
+		<div class="or" data-text="图"></div>
+		<div class="ui  button positive btn-off" data-state="off">不上传了</div>
+	</div>
+	<br>
+	<div class="ui button btn-fetch-users"  style="margin-top: 12px">
+		<i class="users icon"></i>
+		获取空闲用户
+	</div>
+	<div class="ui fluid icon input" style="margin-top: 12px">
+		<input class="input-users" disabled="true" type="text" placeholder="">
+		<i class="users icon"></i>
+	</div>
+	<div class="ui button btn-fetch-atlas"  style="margin-top: 12px">
+		<i class="puzzle icon"></i>
+		无资源用户
+	</div>
+	<div class="ui fluid icon input" style="margin-top: 12px">
+		<input type="text" class="input-users-without-atlas" placeholder="">
+		<i class="puzzle icon"></i>
+	</div>
+	<div class="ui button btn-delete-users"  style="margin-top: 12px">
+		<i class="delete icon"></i>
+		<i class="users icon"></i>
+		批量删除用户
+	</div>
+	<a href="/spider/download/users" target="_blank" class="ui button btn-download-users">
+		<i class="download icon"></i>
+		<i class="file icon"></i>
+		下载全部用户ID
+	</a>
+	<div class="ui button btn-atlas-count"  style="margin-top: 12px">
+		<i class="cube icon"></i>
+		可用图集／总图集
+	</div>
+	<div class="ui fluid icon input" style="margin-top: 12px">
+		<input type="text" class="input-delete-users" placeholder="用“，”或者空格隔开用户ID">
+		<i class="puzzle icon"></i>
+	</div>
+	<div class="spider-terminal">
+	</div>
+	
+	<footer class="status-bar">
+		<div class="status-item produce">本次会话生产计数：<span class="counter">0</span></div>
+		<div class="status-item rate">可用／总数: <span class="avail">0</span>／<span class="total">N</span></div>
+		<div class="status-item user-count">用户数：<span></span></div>
+		<div class="status-item repeat-check"><span>重复项红灯<i></i></span></div>
+	</footer>
+</div>
+<script src="/static/js/mod/spider/pinsta.js"></script>

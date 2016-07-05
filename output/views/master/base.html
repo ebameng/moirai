@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit"> 
+	<title>诺亚平台</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/img/fav.png" />
+
+	<%block name="block_header_css"%>
+	<link rel="stylesheet" href="/static/plugins/Semantic-UI-1.0.0.2/dist/semantic.min.css">
+	<link rel="stylesheet" href="/static/css/main.css?__inline">
+	<link rel="stylesheet" href="/static/css/reset.css?__inline">
+	<%/block%>
+	<!-- add socket mechanism -->
+	<script src="/static/js/base/socket.io-1.3.5.js"></script>
+	<script src="/static/js/boot/socket-client.js"></script>
+
+	<script type="text/javascript">
+	// fis content replacement
+	var __uri = function (url) {
+		return url;
+	};
+
+	window['_NA_'] = {
+		uid: '${user.id}',
+		mode: '${__LOCAL__.mode}',
+		api_domain: 'http://${__LOCAL__.api_domain}',
+		cdn: '${__LOCAL__.static_cdn}',
+		md5_map_content: ${__LOCAL__.md5_map_content}
+		// for md5 replace
+	};
+
+	window._GET_HASHMAP_ = function(key) {
+		if (/^http(s)?:/.test(key)) return key;
+		// window['_NA_']['mode'] = 'xxxx'
+		if (window['_NA_']['mode'] == 'development') {
+		    return key;
+		}
+		key = key.replace(/^\//, '');
+		key = window['_NA_']['md5_map_content'][key] || key;
+		return key;
+	};
+	</script>
+</head>
+<body>
+	<div id="globalProgress">
+		 
+	</div>
+	<div id="header">
+		<div class="logo"> </div>
+		<h2 class="title">
+			<a href="/">
+			诺亚平台
+			<% if (__LOCAL__['mode'] == 'development') { %>
+				<span style="color: orange">狂欢模式</span>
+			<% } %>
+			</a>
+		</h2>
+		<div class="user-nav">
+			<%
+				var loginTime = user.onlineTime;
+			%>
+			<a class="user" href="javascript:void(0)"><img src="${user.headUrl}" data-id="${user.id}" alt="头像" title="${user.nickname}的头像"></a>
+			<span class="nickname" title="${user.nickname}最近一次登录&#13;${loginTime|whenHappend}">${user.nickname}</span>
+			<span class="message">消息<i>3</i></span>
+			<a href="/logout"><img src="/static/img/icons/switch.png" style="width: 16px; height: auto;" title="退出" alt=""></a>
+		</div>
+	</div>
+
+	<div id="main">
+		<div class="content" id="content">
+			<div class="center">
+				<%block name="block_main_center" %>
+				<%/block%>
+			</div>
+		</div>
+		
+	</div>
+
+	<!-- sidebar -->
+	<%include 'common/layout/sidebar'  var='{menu: menu}' /%>
+
+	<div id="footer" >喜扑科技</div>
+	
+	<div id="security">
+		 
+		<p class="arrow"> </p>
+		<div class="wrap">
+			<div class="content">
+				<div class="portrait">
+					<form name="head-image" action="/admin/update/portrait" method="post">
+						<%include 'common/widgets/input-image-preview' '{name: "files"}'%>
+						<a class="update-head-image">更新</a>
+						<p>(请上传任意大小的1：1图片)</p>
+					</form>
+				</div>
+				<div class="ui warning form segment basics">
+					<div class="ui  message" >
+						<div class="header">我的信息</div>
+					</div>
+					<div class="field">
+						<label>ID</label>
+						<input type="text" name="id" value="${user.id}" readonly />
+					</div>
+					<div class="field">
+						<label>昵称</label>
+						<input type="text" name="nickname" value="${user.nickname}" />
+					</div>
+					<div class="ui blue submit button">修改</div>
+				</div>
+
+				<div class="ui warning form segment signature">
+					<div class="ui message" >
+						<div class="header">个性签名</div>
+					</div>
+					<div class="field">
+						<textarea name="content" id="" cols="20" style="height: 60px;" rows="10">${user.content}</textarea>
+					</div>
+					<%
+						var sex = user['sex'] || 'f';
+						var mClass = ' ';
+						var fClass = ' ';
+						if (sex == 'f') {
+							mClass = 'active red';
+						} else {
+							fClass = 'active red';
+						}
+					%>
+					<div class="ui buttons">
+						<div class="ui  button ${mClass}" data-id="male">男</div>
+						<div class="or "></div>
+						<div class="ui  button ${fClass}" data-id="female">女</div>
+					</div>
+					<div class="field">
+						<div class="ui blue submit button">修改</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+	 
+	<%block name="block_footer_js" %>
+	<script type="text/javascript" src="/static/js/base/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="/static/js/libs/utils.js"></script>
+	<script type="text/javascript"  src="/static/js/base/underscore.js"></script>
+	<script type="text/javascript"  src="/static/js/base/underscore.deferred.js"></script>
+	<script type="text/javascript" src="/static/js/base/jquery.form.js"></script>
+	<script type="text/javascript" src="/static/js/base/jquery.lazyload.js"></script>
+	<script type="text/javascript" src="/static/js/base/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/static/plugins/webuploader/webuploader.js"></script>
+	<script type="text/javascript" src="/static/plugins/datetime.picker/jquery.datetimepicker.js"></script>
+	<script type="text/javascript" src="/static/plugins/distpicker/release/0.1.3/distpicker.data.js"></script>
+	<script type="text/javascript" src="/static/plugins/distpicker/release/0.1.3/distpicker.js"></script>
+	<script type="text/javascript" src="/static/js/base/localforage.js"></script>
+
+    <script src="/static/plugins/aui-artDialog/dist/dialog-min.js"></script>
+	<script src="/static/js/boot/bigpipe.js"></script>
+
+	<script type="text/javascript"  src="/static/js/base/require.js"></script>
+	<script type="text/javascript"  src="/static/js/boot/config.js"></script>
+
+	<script type="text/javascript">
+	// init bigpipe, when require app.js the line has been executed!
+	window['_SmartPipe_'] = new window.BigPipe();
+
+	(function inputImagePreview (el) {
+		// input-image-preview
+		$(document.body).on('change', el || '.ui-input-image-preview input[type=file]', function(e) {
+			var file = e.target.files[0];
+			var $this = $(this);
+			var reader = new FileReader();
+			reader.onload =  function(e) {
+				var dataURL = e.target.result;
+				$this.parent().find('img').attr('src', dataURL);
+			};
+			reader.readAsDataURL(file);
+		});
+	})();
+
+	(function inputRadioGroupChange (el) {
+		// input-image-preview
+		$(document.body).on('click', el || '.ui.buttons .button', function(e) {
+			$(this).addClass('positive').siblings().removeClass('positive');
+		});
+	})();
+
+	// declare function
+	function globFnWatchResize(callback) {
+		var size = {w: window.innerWidth, h: window.innerHeight};
+		callback(size);
+		$(window).on('resize', function(e) {
+			var size = {w: window.innerWidth, h: window.innerHeight};
+			callback(size);
+		});
+	};
+	</script>
+	<%/block%>
+	<link rel="stylesheet" href="/static/css/lib/scrollbar.css?__inline">
+	<link rel="stylesheet" href="/static/plugins/aui-artDialog/css/ui-dialog.css">
+	<link rel="stylesheet" href="/static/css/lib/animate.css">
+</body>
+</html>

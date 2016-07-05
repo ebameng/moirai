@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/static/css/page/applunch.css">
+<link rel="stylesheet" href="/static/plugins/datetime.picker/jquery.datetimepicker.css">
+<div class="mod-applunch">
+	<form action="applunch/create" method="post" id="mod-applunch">
+		<!-- imageFile -->
+		<div class="row">
+			<h3 class="label">点击上传图片</h3>
+			
+			<div class="field">
+				<img src="" alt="">
+				<input class="file-preview"  accept="image/*" placeholder="广告大图" name="imageFile" type="file" />
+			</div>
+		</div>
+
+		<!-- startTime -->
+		<div class="row">
+			<h3 class="label">起始时间（可选）</h3>
+			<div class="ui left icon input label-search-box">
+				<input type="text" readonly class="datetimepicker" name="starttime" style="margin-bottom: 8px;"  placeholder="日期时间" />
+				<i class="time icon"></i>
+			</div>
+			<span class="clear-timer">清空</span>
+		</div>
+
+		<!-- endTime  -->
+		<div class="row">
+			<h3 class="label">结束时间（可选）</h3>
+			<div class="ui left icon input label-search-box">
+				<input type="text" readonly class="datetimepicker" name="endtime" style="margin-bottom: 8px;"  placeholder="日期时间" />
+				<i class="time icon"></i>
+			</div>
+			<span class="clear-timer">清空</span>
+		</div>
+
+		<!-- version(int) -->
+		<div class="row">
+			<h3 class="label">版本号</h3>
+			<div>
+				<div class="ui form">
+				    <input name="version" style="width:250px;" type="number" min="1" />
+				</div>
+			</div>
+		</div>
+
+		<!-- type -->
+		<div class="field">
+			<h3 class="label">类型</h3>
+			<div class="ui buttons resource-type">
+				<div class="ui button positive" data-type="plus">tplus</div>
+				<div class="or"></div>
+				<div class="ui  button" data-type="mbb">mbb</div>
+				<div class="or"></div>
+				<div class="ui  button" data-type="Fmsjs">Fmsjs</div>
+			</div>
+		</div>
+
+		<!-- description -->
+		<div class="row">
+			<h3 class="label">说点什么</h3>
+			<div>
+				<div class="ui form">
+				    <textarea style="min-height: 48px;height: 48px; width: 600px;" name="desc"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 20px;">
+			<div class="ui btn-submit primary button">提交</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="/static/js/mod/applunch/publish.js"></script>

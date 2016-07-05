@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>upload</title>
+
+	<!--引入CSS-->
+	<link rel="stylesheet" type="text/css" href="/st/webuploader/webuploader.css">
+	<!--引入JS-->
+	<script type="text/javascript"  src="/st/js/base/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="/st/webuploader/webuploader.js"></script>
+
+
+</head>
+<body>
+	<div id="uploader" class="wu-example">
+	    <!--用来存放文件信息-->
+	    <div id="thelist" class="uploader-list"></div>
+	    <div class="btns">
+	        <div id="picker">选择文件</div>
+	        <button id="ctlBtn" class="btn btn-default">开始上传</button>
+	    </div>
+	</div>
+		<script>
+			var uploader = WebUploader.create({
+			    // swf文件路径
+			    swf: '/st/js/base/webuploader/Uploader.swf',
+
+			    // 文件接收服务端。
+			    // server: '/upload/media',
+			    server: 'http://localhost:3000/',
+
+			    // 选择文件的按钮。可选。
+			    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+			    pick: '#picker',
+			    auto: true,
+			    compress: false,
+			    // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+			    resize: false,
+			    accept: {
+		            title: 'Images',
+		            extensions: 'gif,jpg,jpeg,bmp,png',
+		            mimeTypes: 'image/*'
+		        }
+			});
+			debugger
+			uploader.on( 'fileQueued', function( file ) {
+				debugger
+			});
+			
+			uploader.on( 'uploadSuccess', function( file ) {
+				debugger
+			});
+
+			uploader.on( 'uploadError', function( file ) {
+				debugger
+			});
+
+			uploader.on( 'uploadComplete', function( file ) {
+				debugger
+			});
+
+		</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+@import "../../liblus/_css3";
+@import "../../liblus/widget";
+
+.mod-permission-manage {
+	height: 100%;
+	.header {
+		box-shadow: 0 0 22px 4px #898986;
+		padding: 10px;
+		height: 50px;
+		box();
+		.menu-role {
+			flex()
+		}
+	}
+	.container {
+		min-height: 200px;
+	}
+	 
+	.sub-mod-role, .sub-mod-url{
+		float: left;
+		width: 68%;
+		padding: 5px;
+		height: 100%;
+	}
+
+	.panel {
+		height: 100%;
+		padding: 0 20px 10px 10px;
+		overflow-y: scroll;
+	}
+	
+	.item.url {
+		position: relative;
+		.menu {
+			box()
+			align()
+			background: orange;
+			position: absolute;
+			right: 0;
+			top: 10px;
+			cursor: pointer;
+		}
+	}
+	
+	.sub-mod-url {
+		// position: fixed;
+		// top: 60px;
+		// right: 10px;
+		.panel {
+			padding: 0;
+		}
+		width: 32%;
+		height: 100%;
+		
+		.title {
+			padding-bottom: 8px;
+			padding: 8px;
+			background: #ff3e3e;
+			color: yellow;
+			padding: 8px;
+			p {
+				font-size: 13px;
+			}
+		}
+		.panel {
+			background: #fff;
+			ul {
+				clear()
+				padding-bottom: 20px;
+
+				li {
+					display: block;
+					font-size: 12px;
+					margin: 16px;
+					margin-bottom: 0;
+					padding: 4px 8px;
+					background: #E9E7E7;
+					box-shadow: 0px 0px 2px #999;   
+					&:hover {
+						background: #ff3e3e;
+						color: yellow;
+					}
+					h4 {
+						line-height: 26px;
+						overflow: hidden;
+						font-size: 13px;
+					}
+					.name {
+						flex(1)
+						width: 72%;
+					}
+					&.dragging {
+						color: #fff;
+						opacity: 0.62;
+						background: green;
+					}
+				}
+			}
+		}
+	}
+	.sub-mod-role {
+		margin-right: 0;
+		.col {
+			width: 50%;
+			float: left;
+			&:last-child {
+				padding-left: 10px;
+			}
+		}
+
+		h2 {
+			font-size: 14px;
+			position: relative;
+			.menu {
+				position: absolute;
+				right: 0;
+				top: 0;
+				display: none;
+			}
+		}
+		.item {
+			&.editable {
+				h2 .menu {
+					display: block;
+				}
+			}
+			background: #fff;
+			margin-bottom: 12px;
+			border-radius: 3px;
+			overflow: hidden;
+			box-shadow: 0 0px 10px 1px #999;
+			position: relative;
+			h2 {
+				padding: 8px;
+				color: #EDDDBD;;
+				background: #32A8A8;
+				p {
+					font-size: 13px;
+				}
+			}
+			ul {
+			 	li {
+			 		padding: 6px;
+			 		border-top: 1px solid #e8e8e8;
+			 		box-shadow: none;
+			 		border-radius: 0;
+			 		&.empty {
+			 			padding: 20px;
+			 			margin: 0;
+			 			border-radius: 3px;
+			 			text-align: center;
+			 			color: #3c3c3e;
+			 			background: #f8fac8;
+			 		}
+			 	}
+			}
+		}
+	}
+}

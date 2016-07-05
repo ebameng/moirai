@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/static/css/page/user/list.css">
+
+<div class="mod-user-list">
+	<div class="ui icon input">
+		<input type="text" placeholder="根据昵称搜索.." value="${name}" />
+		<i class="circular search icon action-paresh" data-url=""></i>
+	</div>
+	<%
+		var list = data['list'];
+	%>
+	<ul class="list" >
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+			var item = list[i];
+			var index = i+1;
+		%>
+
+		<li class="item" data-id="${item['id']}">
+			<div class="recmd img-wrap">
+				<% if(item.userRecommend == true) { %>
+				<i class="heart icon red large hide" title="已成为推荐用户"></i>
+				<% } else { %>
+				<i class="gift icon large hide" title="点击设为推荐"></i>
+				<% } %>
+				<img class="lazy-load" data-original="${item['headUrl']}" alt="" />
+			</div>
+			<div class="info">
+				${item['nickname']}
+			</div>
+		</li>
+		<% } %>
+	</ul>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/user/list.js"></script>

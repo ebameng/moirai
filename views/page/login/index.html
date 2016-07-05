@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="/static/css/page/login/index.css">
+	<script type="text/javascript">
+		window['_NA_'] = {
+			mode: '${mode}'
+		};
+	</script>
+	<!-- add socket mechanism -->
+	<% if (mode == 'development') { %>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/static/js/boot/reload.js"></script>
+	<% } %>
+
+
+	<!-- START md5  -->	
+	<script type="text/javascript"  src="/static/js/base/md5.js"></script>
+	<!-- END md5  -->
+
+</head>
+<body>
+	<div class="login" >
+	<form action="/passport/check" method="post" onsubmit="return doSubmit(this);">
+		<h2>登录</h2>
+		<div class="row">
+			<input type="text" required name="username" placeholder="账号" />
+		</div>
+		<div class="row">
+			<input type="password" required name="password" placeholder="密码" />
+		</div>
+		<div class="row">
+			<input type="submit"  class="sbtnSubmit" value="登录">
+		</div>	
+	</form>
+	</div>
+	<script>
+	function doSubmit (form) {
+		form[1].value = md5(form[1].value)
+		return true;
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/static/css/page/label/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+<div class="mod-label-list mod" >
+	<div class="list-header">
+		<div class="ui icon input" data-type="${type}">
+			<input type="text" placeholder="搜索标签"  value="${name}">
+			<i class="circular search icon action-paresh" data-url=""></i>
+		</div>
+		<a href="/label/publish"  class="ui down button action-paresh">
+			<i class="tag icon"></i>
+			添加标签
+		</a>
+	</div>
+	<%
+	var typeList = [
+	'普通',
+	'位置',
+	'人物',
+	'心情',
+	'活动'
+	];
+	%>
+	<div class="tab-header">
+		<div class="ui top attached tabular menu">
+			<% for(var i = 0; i < typeList.length; i ++) { %>
+			<%
+			var isActive = '';
+			if (type==i) {
+			isActive = 'active';
+			}
+			%>
+			<a href="/label/list?type=${i}" class="${isActive} item action-paresh">${typeList[i]}</a>
+			<% } %>
+		</div>
+	</div>
+	<% if(type == 0) { %>
+	<%
+		var brandMap = {
+			'-1': '',
+			'0': '',
+			'1': ''
+		};
+		brandMap[brand] = 'active green';	 
+	%>
+	<div class="ui blue buttons">
+	   <div class="ui button ${brandMap['-1']} "><a class="action-paresh" href="/label/list?type=0">全部</a></div>
+	   <div class="ui button  ${brandMap['1']}"><a class="action-paresh" href="/label/brand/list?type=0&brand=1">品牌列表</a></div>
+	   <div class="ui button  ${brandMap['0']}"><a class="action-paresh" href="/label/brand/list?type=0&brand=0">非品牌列表</a></div>
+	 </div>
+	<% } %>
+	<ul>
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+		var item = list[i];
+		%>
+		<li class="item" data-id="${item.id}" data-content="${item.content}" data-hot="${item.hot}" data-type="${item.type}" data-content="${item.content}" data-brand="${item.brand}" data-usable="${item.usable}" >
+			<div class="img-wrap">
+				<img class="lazy-load"   data-original="${item.imgUrl}"  alt="">
+			</div>
+			<p class="name">${item.name}
+			
+			</p>
+			<span class="edit"><i class="edit icon"></i></span>
+		</li>
+		<% } %>
+	</ul>
+	<% if (page) { %>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+	<% } %>
+</div>
+<link rel="stylesheet" href="/static/plugins/aui-artDialog/css/ui-dialog.css">
+<script src="/static/plugins/aui-artDialog/dist/dialog-min.js"></script>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/label/list.js"></script>

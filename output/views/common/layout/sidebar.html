@@ -1,0 +1,43 @@
+<div id="sideBar">
+	<div class="list">
+		<a href="/" class="on  navItem nav-welcome ">欢迎页面</a>
+		<% for(var appName in menu) { %>
+		<%
+			var node = menu[appName];
+			var list = node['list'];
+			var title = node['title'];
+			var siteUrl = node['site'];
+		%>
+		<div class="group">
+			<h2>${title}<a target="_blank" href="${siteUrl}" title="进入主站"></a></h2>
+			<ul>
+				<% for(var i=0; i<list.length; i++) { %>
+				<%
+					var item = list[i];
+				%>
+				<li><a href="${item['url']}" class="navItem ${item.clsName} action-paresh">${item.name}</a></li>
+				<% } %>
+			</ul>
+		</div>
+		
+		<% } %>
+		<div class="group">
+			<h2>内容管理</h2>
+			<ul>
+				<li><a href="/t" target="_blank" >内容同步T</a></li>
+				<li><a href="/f" target="_blank" >内容同步F</a></li>
+				<!-- <li><a href="/test" target="_blank" >ceshi</a></li> -->
+			</ul>
+		</div>
+		<% if(__LOCAL__.mode == 'development') { %>
+		<div class="group">
+			<h2>测试案例</h2>
+			<ul>
+				<li><a href="/test/view" class="action-paresh" >单视图</a></li>
+				<li><a href="/test/layout" class="action-paresh" >多重嵌套视图</a></li>
+				<li><a href="/test/load" class="action-paresh" >加载更多</a></li>
+			</ul>
+		</div>
+		<% } %>
+	</div>
+</div>

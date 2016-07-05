@@ -1,0 +1,122 @@
+.class-page-navi {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 16px 0;
+  height: 32px;
+}
+.class-page-navi .start,
+.class-page-navi .end,
+.class-page-navi .prev,
+.class-page-navi .next,
+.class-page-navi .bar {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #3e3e3e;
+  text-align: center;
+  border: solid 1px #ededed;
+  font-weight: 700;
+}
+.class-page-navi .prev,
+.class-page-navi .bar {
+  border-right: none;
+}
+.class-page-navi .start,
+.class-page-navi .end {
+  margin-right: 4px;
+  padding: 0 4px;
+  width: auto;
+}
+.class-page-navi .bars {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .pin {
+  background: #ededed;
+  color: #999;
+}
+.class-page-navi .summary {
+  margin-left: 6px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .summary .total {
+  margin-right: 2px;
+}
+.class-page-navi .summary .port input {
+  height: 100%;
+}
+.file-picker input[type="file"] {
+  display: none;
+}
+.class-btn-add-files {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #20a7e9;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+.class-btn-add-files input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+.class-btn-add-files .text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.mod-stickers {
+  max-width: 300px;
+}
+.mod-stickers .field {
+  margin-top: 15px;
+}
+.mod-stickers .stype-list {
+  border-radius: 5px;
+  display: none;
+}
+.mod-stickers .stype-list .type-list {
+  float: left;
+  padding: 15px 15px 15px 0;
+}
+.mod-stickers .stype-list .type-list img {
+  width: 40px;
+  height: 40px;
+}
+.mod-stickers .stype-list .type-list .checkbox input {
+  opacity: 0.6 !important;
+  z-index: 2;
+}
+.mod-stickers .stype-list .add-type {
+  display: inline-block;
+  background: #ccc;
+  padding: 3px;
+  border-radius: 2px;
+  margin-top: 17px;
+}

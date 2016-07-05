@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/static/css/page/stickers/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+<div class="mod-stickers-list mod" >
+	<div class="list-header">
+		<div class="ui icon input">
+			<input type="text" placeholder="搜索贴纸">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/stickers/publish"  class="ui down button action-paresh">
+			<i class="tag icon"></i>
+			添加贴纸
+		</a>
+	</div>
+	<div class="tab-header">
+		<%
+		var type_0 = 'active';
+		var type_1 = '';
+		if(type == 1) {
+		type_0 = '';
+		type_1 = 'active';
+		}
+		%>
+		<div class="ui top attached tabular menu">
+			<a href="/stickers/list" class="${type_0} item  action-paresh">普通贴纸</a>
+			<a href="/stickers/type/list" class="${type_1} item  action-paresh">分类贴纸</a>
+		</div>
+	</div>
+	<ul>
+		
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+		var item = list[i];
+		var fullscreen = item.fullScreen;
+		%>
+		<li class="item" data-id="${item.id}" data-cachekey="${item.cacheKey}" data-weight="${item.weight}" data-level="${item.level}" data-show="${item.delFlag}" data-size="${item.size}" data-name="${item.name}" data-fs="${item.fullScreen}" data-vk="${item.viewKey}">
+			<div class="img-wrap">
+			<% if(type == 1) { %>
+				<a href="/stickers/detail/list?stId=${item.id}&type=1"><img class="lazy-load" src="${item.cacheUrl}" alt=""></a>
+			<% } else { %>
+				<img class="lazy-load look-detail"  src="${item.cacheUrl}" data-view="${item.viewUrl}"  alt="">
+			<% } %>
+			</div>
+			<p class="name">${item.name}<i class="weight">(${item.weight})</i>
+			</p>
+
+			<% if(fullscreen == 1 && type == 0) { %>
+			<p class="isfullscreen">全屏贴纸</p>
+			<% } %>
+			
+			<% if(type == 1) { %>
+				<span class="update-type"><i class="edit icon"></i></span>
+			<% } else { %>
+			<span class="update"><i class="edit icon"></i></span>
+			<% } %>
+		</li>
+		<% } %>
+	</ul>
+	<% if(type == 0) { %>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+	<% } %>
+</div>
+<link rel="stylesheet" href="/static/plugins/aui-artDialog/css/ui-dialog.css">
+<script src="/static/plugins/aui-artDialog/dist/dialog-min.js"></script>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script type="text/javascript" src="/static/js/mod/stickers/list.js"></script>

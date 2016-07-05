@@ -1,0 +1,155 @@
+.class-page-navi,
+.page-nav {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: start;
+  -o-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 16px 0;
+  height: 32px;
+}
+.class-page-navi .start,
+.page-nav .start,
+.class-page-navi .end,
+.page-nav .end,
+.class-page-navi .prev,
+.page-nav .prev,
+.class-page-navi .next,
+.page-nav .next,
+.class-page-navi .bar,
+.page-nav .bar {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #3e3e3e;
+  text-align: center;
+  border: solid 1px #ededed;
+  font-weight: 700;
+}
+.class-page-navi .prev,
+.page-nav .prev,
+.class-page-navi .bar,
+.page-nav .bar {
+  border-right: none;
+}
+.class-page-navi .start,
+.page-nav .start,
+.class-page-navi .end,
+.page-nav .end {
+  margin-right: 4px;
+  padding: 0 4px;
+  width: auto;
+}
+.class-page-navi .bars,
+.page-nav .bars {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .pin,
+.page-nav .pin {
+  background: #ededed;
+  color: #999;
+}
+.class-page-navi .summary,
+.page-nav .summary {
+  margin-left: 6px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+}
+.class-page-navi .summary .total,
+.page-nav .summary .total {
+  margin-right: 2px;
+}
+.class-page-navi .summary .port input,
+.page-nav .summary .port input {
+  height: 100%;
+}
+.file-picker input[type="file"] {
+  display: none;
+}
+.class-btn-add-files {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  background: #20a7e9;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 40px;
+  text-align: center;
+}
+.class-btn-add-files input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+.class-btn-add-files .text {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.mod-user-list {
+  position: relative;
+}
+.mod-user-list .list {
+  width: 700px;
+}
+.mod-user-list .list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mod-user-list .list li {
+  float: left;
+  margin: 10px;
+  width: 120px;
+}
+.mod-user-list .list li .img-wrap {
+  width: 120px;
+  height: 120px;
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+.mod-user-list .list li .recmd {
+  position: relative;
+}
+.mod-user-list .list li .recmd .hide {
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+.mod-user-list .list li .op {
+  display: block;
+}
+.mod-user-list .list li .info {
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}

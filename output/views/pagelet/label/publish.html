@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/static/css/page/label/publish.css">
+<div class="mod-label-publish">
+	<form action="/label/create" method="post" class="create-label">
+	<%include 'common/widgets/input-image-preview'%>
+	<div class="row">
+		<div class="ui icon input">
+			<input type="text" name="name" placeholder="名称">
+			<i class="home  icon"></i>
+		</div>
+	</div>
+	<div class="row">
+		<h3 class="label">类型</h3>
+		<div class="ui buttons resource-type">
+			<div class="ui button positive common" data-id="0">普通</div>
+			<div class="or"></div>
+			<div class="ui  button location" data-id="1">位置</div>
+			<div class="or"></div>
+			<div class="ui  button character" data-id="2">人物</div>
+			<div class="or"></div>
+			<div class="ui  button feeling" data-id="3">心情</div>
+			<div class="or"></div>
+			<div class="ui  button activity" data-id="4">活动</div>
+		</div>
+	</div>
+	<div class="row brand">
+		<div class="ui buttons brand-type">
+			<div class="ui button" data-id="1">品牌</div>
+			<div class="or"></div>
+			<div class="ui button positive" data-id="0">非品牌</div>
+		</div>
+	</div>
+	<div class="row" style="width: 400px;">
+		<div class="ui form">
+			<textarea style="min-height: 48px;height: 48px; width: 100%;" placeholder="说点什么......" name="content"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="ui icon input">
+			<input type="number" name="weight" placeholder="权重" value="1">
+			<i class="thumbs up  icon"></i>
+		</div>
+	</div>
+	</form>
+	<div class="row">
+		<div class=" btn-submit positive ui button">提交</div>
+	</div>
+</div>
+
+
+<script src="/static/js/mod/label/publish.js"></script>

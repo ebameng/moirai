@@ -1,0 +1,136 @@
+@import "../../liblus/_css3";
+@import "../../liblus/widget";
+
+// start file
+.mod-label-list {
+	width: 960px;
+	margin:auto;
+	position: relative
+	.blue {
+		.button {
+			a {
+				color: #fff;
+			}
+		}
+	}
+	.overlay {
+		width: 100%;
+		background-color: #000;
+		opacity: 0.7;
+		height: 2223px;
+	}
+	padding-top: 20px;
+	.tab-header {
+		margin: 12px 0;
+		.item {
+			cursor: pointer;
+		}
+	}
+	.label-nav {
+		display: inline;
+		span {
+			display: inline;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 7px;
+		}
+		i {
+			padding-bottom: 27px;
+		}
+	}
+	ul {
+		clear()
+		li {
+			box()
+			pack()
+			align()
+			float: left;
+			width: 24%;
+			margin: 0 1% 1% 0; 
+			height: 240px;
+			overflow: hidden;
+			position: relative;
+			box-sizing: border-box;
+			.img-wrap {
+				margin: 10px;
+			}
+			p {
+				fontheight(30px);
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(33,33,33, 0.62);
+				padding-left: 8px;
+				color: #fff;
+			}
+			span {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				color: #fff;
+			}
+			
+			&:hover {
+				.text {
+					transform(translateY(100%) rotate(720deg));
+				}
+			}
+		}
+	}
+}
+ 
+.pagelet-dialog {
+	.close {
+		background: #32a8a8;
+		position: fixed;
+		left: $_sidebarWidth;
+		top: $_headerHeight;
+		z-index: 99
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		font-size: 40px;
+		color: #fff;
+		cursor: pointer
+		line-height: 40px;
+		content: "";
+		
+	}
+	position: absolute;
+	padding-top: 40px;
+	top: 0;
+	display: none;
+	left: 0;
+	background-color: rgba(1,0,0,0.4);
+	z-index: 99999;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 100px 100px rgba(1,0,0,0.4);
+	.modal {
+		border-radius: 5px;
+		width: 400px;
+		background-color: #fff;
+		left: 50%;
+		margin-left: -200px;
+		position: relative;
+		.form {
+			opacity: 0.1;
+		}
+		.remove {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.btn-submit {
+			margin-left: 200px;
+			margin-bottom: 10px;
+		}
+		textarea {
+			border: 1px solid #000;
+		}
+	}
+}
+.page-nav {
+	@extend .class-page-navi
+}

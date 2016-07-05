@@ -1,0 +1,324 @@
+@import "../liblus/_css3";
+@import "../liblus/widget";
+
+// start file
+.mod-sp-startpage {
+	.file-box {
+		box();
+		height: 274px;
+		
+	}
+	.label-search-box {
+		position: relative;
+		.suggestion {
+			position: absolute;
+			left: 0px;
+			top: 100%;
+			display: none;
+			margin-top: -10px;
+			background: #eee;
+			z-index: 1000;
+			width: 100%;
+			max-height: 400px;
+			overflow: auto;
+			ul {
+				display: block
+				margin: 6px 8px;
+				li {
+					border-bottom: 1px solid #DFDBDB;
+					padding: 4px;
+					cursor: pointer;
+					&:hover {
+						background: #fff;
+						color: #333;
+					}
+					&:last-child {
+						border: none;
+					}
+				}
+			}
+			
+		}
+		.suggestion-loading {
+			size(32px);
+			margin-top: 1px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: none;
+			background: url($imgPath + '/icons/loading.gif') no-repeat center center;
+			background-size: 24px;
+		}
+		.append {
+			fontheight(14px);
+			margin: 4px;
+			background: #fff;
+			color: #333;
+			padding: 2px;
+		}
+	}	
+	.drop-zone {
+		box();
+		align(center);
+		pack(center);
+		width: 274px;
+		border: 2px dashed #dfdfdf; 
+		border-radius: 6px;
+		position: relative;
+		background: url($imgPath + '/icons/image-upload.png') no-repeat center 40px;
+		
+		&.webuploader-dnd-over {
+			border: 2px dashed #999; 
+		}
+		&:hover {
+			.tips {
+				color: #999
+			}
+		}
+		.tips {
+			text-align: center;
+			color: #eee;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			width: 100%;
+			font-size: 18px;
+		}
+		.btnAddFiles {
+			@extend .class-btn-add-files
+
+		}
+
+	}
+	.row h2.label {
+		margin: 0px 0 6px;
+	}
+	.grouped {
+		clear()
+	}
+	.label-history-box {
+		&.show {
+			display: block;
+		}
+		z-index: 9999;
+		position: fixed;
+		right: -8px;
+		bottom: -8px;
+		top: auto;
+		background: gray;
+		display: none;
+		
+		overflow: auto;
+		border-radius: 8px;
+		padding: 12px;
+		color: #fff;
+		.checkbox-item label {
+			color: #fff;
+		}
+		.main {
+			width: 400px;
+			height: 300px;
+			.label {
+				float: left;
+				border: 1px dotted #e8e8e8;
+				padding: 4px;
+				margin: 0 6px 6px 0;
+				border-radius: 4px;
+				color: #fff;
+				&:hover {
+					color: #333;
+				}
+			}
+		}
+		.footer {
+			color: #A8A5A5;
+			padding-bottom: 0px;
+		}
+	}
+	.checkbox-item {
+		&.marked {
+			border: 1px dotted orange;
+		}
+		float: left;
+		border: 1px dotted #e8e8e8;
+		padding: 4px;
+		margin: 0 6px 6px 0;
+		border-radius: 4px;
+		&.on {
+			border: none;
+			background: #333;
+			border: 1px solid #333;
+			label {
+				color: #fff !important;
+			}
+		}
+	}
+	.checkbox-item-add, .btn-mark-label {
+		margin-top: 1px;
+		cursor: pointer;
+		background: #999;
+		color: #fff;
+		border: none;
+	}
+	.link-box {
+		clear()
+		.form {
+			.field {
+				margin: 0;
+				input {
+					border-radius: 12px;	
+					border: none;
+				}
+			}
+		}
+	}
+	.add-text-link {
+		box();
+		pack()
+		align()
+		background: #f2f2f2;
+		border-radius: 6px;
+		margin: 0 10px 10px 0;
+		float: left;
+		height: 80px;
+		width: 80px;
+		font-size: 60px;
+		color: #fff;
+		cursor: pointer;
+		background: url($imgPath + '/icons/add.png') no-repeat center center;
+		&:hover {
+			background-color: #eeeeee;
+		}
+	}
+	.text-link {
+		background: #f2f2f2;
+		padding: $boxPadding;
+		border-radius: 6px;
+		float: left;
+		width: 240px;
+		margin: 0 10px 10px 0;
+		position: relative;
+		&:hover .destroy{
+				display: block;
+		}
+		.destroy {
+			size(16px);
+			position: absolute;
+			right: -6px;
+			top: -6px;
+			background: url($imgPath + '/icons/close.png') no-repeat center center;
+			background-size: 16px;
+			display: none;
+			
+		}
+		input {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 4px;
+			font-size: 14px;
+			margin: 0;
+			border: none;
+			display: block;
+			&:first-child {
+				margin-bottom: 1px;
+			}
+		}
+	}
+	.pre-box {
+		padding: 6px;
+		width: 100px;
+		height: 100%;
+		overflow-y: scroll;
+
+		flex()
+		.progress-box {
+			float: left;
+			margin: 0 4px 4px 0;
+			background: #f2f2f2;
+			position: relative;
+			padding: 6px;
+			height: 118px;
+			width: 118px;
+			.wrap {
+				overflow: hidden;
+				height: 100%;
+				margin: 0 auto;
+				background: #fff;
+				box()
+				pack(center);
+				align(center);
+				.close {
+					size(16px);
+					position: absolute;
+					top: -5px;
+					right: -5px;
+					background: url($imgPath + '/icons/close.png') no-repeat center center;
+					background-size: 16px;
+					z-index: 99;
+					cursor: pointer;
+				}
+			}
+			.progress {
+				position: absolute;
+				padding: 0;
+				height: 20px;
+				width: 100%;
+				top: 100%;
+				border: none;
+				height: 10px;
+				border-radius: 0;
+				background: rgba(33, 33, 33, 0.62);
+				left: 0;
+				color: #fff;
+				.bar {
+					border-radius: 0;
+					position: relative;
+					top: -2px;
+				}
+				&.red {
+					background: red !important;
+				}
+			}
+			 
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.clear-timer {
+		margin-left: 10px;
+		&:hover {
+			color: red;
+			cursor: default;
+			position: relative;
+		}
+	}
+	/*.horizontal {
+		margin: 24px;
+		padding: 0px;
+		border-top: 1px solid #e8e8e8;
+		box()
+		align()
+		.item {
+			margin: 0 20px;
+		}
+	}*/
+	
+
+	 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

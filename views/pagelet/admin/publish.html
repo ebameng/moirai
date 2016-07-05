@@ -1,0 +1,65 @@
+<div class="mod-admin-publish">
+	<form action="/admin/create" method="post">
+		<%include 'common/widgets/input-image-preview' /%>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="用户名" type="text" name="username" value=""  autofocus />
+				<i class="user icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="密码(最少输入6位...)" type="password" name="raw-password"  />
+				<i class="lock icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="确认密码" type="password" name="re-password"  />
+				<i class="lock icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="昵称" type="text" name="nickname"  />
+				<i class="child icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="邮箱" type="text" name="email"  />
+				<i class="mail icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="手机号" type="text" name="phone"  />
+				<i class="sort numeric descending icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui left icon input">
+				<input placeholder="个性签名" type="text" name="content" />
+				<i class="comment icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="ui button btn-submit positive ">
+			  <i class="add user icon"></i>
+			  添加
+			</div>
+		</div>
+	</form>
+</div>
+
+<style>
+	.row {
+		margin: 10px;
+	}
+</style>
+<script src="/static/js/mod/admin/publish.js"></script>
+
+
+
+	
+ 

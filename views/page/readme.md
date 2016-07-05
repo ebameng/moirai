@@ -1,0 +1,1 @@
+#only page are here not pajax

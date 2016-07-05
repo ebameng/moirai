@@ -1,0 +1,18 @@
+<script type="text/javascript" data-origin="pipe-in" async="async">
+	top['_SmartPipe_'].whenPageletArrive({
+		cfID: '<%= __cfID__ %>',
+		pipeID: '<%= __pipeID__ %>',
+		parentID: '<%= __parentID__ %>',
+		subViewIDs: '<%= children %>',
+		sel: '<%- selector %>',
+		op: '<%- op %>',
+		css: <%- css %>,
+		js: <%- js %>,
+		html: '<%- html %>'
+	});
+</script>
+<% for(var i = 0; i < inline_js_text.length; i++) { %>
+<script type="text/javascript" data-origin="pipe" data-type="inline">
+	<%- inline_js_text[i] %>
+</script>
+<% } %>

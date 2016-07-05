@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/static/css/page/notification/list.css">
+<link rel="stylesheet" href="/static/css/lib/animate.css">
+<div class="mod-notification-list">
+ 	<div class="list-header">
+ 		<div class="ui icon input">
+			<input type="text" placeholder="搜索消息">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/admin/notification/publish"  class="ui  button action-paresh">
+			<i class="user icon"></i>
+			添加消息
+		</a>
+		<a href="/admin/notification/timer/list"  class="ui  button action-paresh">
+			<i class="wait icon"></i>
+			定时系统消息
+		</a>
+ 	</div>
+ 	<%
+ 	var typeList = [
+ 	'',
+ 	'个人页',
+ 	'标签页',
+ 	'发布',
+ 	'h5链接',
+ 	];
+ 	%>
+ 	<div class="tab-header">
+ 		<div class="ui top attached tabular menu">
+ 			<% for(var i = 0; i < typeList.length; i++) { %>
+ 			<%
+ 			var isActive = '';
+ 			if (type==i) {
+ 			isActive = 'active';
+ 			}
+ 			%>
+ 			<% if(i != 0) { %>
+ 			<a href="/admin/notification/list?type=${i}" data-type="${type}" class="${isActive} item action-paresh">${typeList[i]}</a>
+ 			<% } %>
+ 			<% } %>
+ 		</div>
+ 	</div>
+	<table class="ui  column table segment">
+		<thead>
+			<tr>
+				<th>图片</th>
+				<th>描述</th> 
+				<th>跳转目标</th>
+				<th>操作</th>
+			</tr>
+		</thead> 
+		<tbody>
+			<% for(var i = 0; i < list.length; i ++) { %>
+			<%
+				var item = list[i];
+			%>
+			<tr class="item" data-id="${item.id}">
+				<td class="images">
+					<img src="${item.url}" alt="">
+				</td>
+				<td class="content">${item.content|stripHTML}</td>
+				<td class="jump">${item.jump|stripHTML}</td>
+				<td>
+					<a data-id="${item.id}" class="del" href="void:javascript(0)">删除</a> <br/>
+					<a class="edit">修改</a>
+				</td>
+			</tr>
+			<% } %>
+		</tbody>  
+	</table>
+
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<script type="text/javascript" src="/static/js/mod/notification/list.js"></script>
+

@@ -1,0 +1,60 @@
+@import "_setting"
+@import "global"
+
+prefix($property, $value, vendors = $vendors)
+	for $v, $index in vendors
+		-{$v}-{$property}: $value
+	{$property}: $value
+
+box()
+	display: box
+	for $v in $vendors
+		display unquote('-' + $v + '-box')
+	 
+
+flex(value=1)
+	prefix(box-flex, value)
+
+pack(value=center)
+	prefix(box-pack, value)
+
+align(value=center)
+	prefix(box-align, value)
+
+orient(value=vertical)
+	prefix(box-orient, value)	
+	
+fontheight(value)
+	height: value;
+	line-height: value;
+
+size(value)
+	if length(arguments) > 1
+		width value[0];
+		height value[1];
+	else
+		width value
+		height value
+
+transform(value)
+	prefix(transform, value)
+
+transition(value)
+	prefix(transition, value)
+
+animation(value)
+	prefix(animation, value)
+	
+clear()
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+// grandient
+gradient()
+
+	for $v in $vendors
+		background: s('-%s-gradient(%s)', $v, unquote(join(',', arguments)))
+		

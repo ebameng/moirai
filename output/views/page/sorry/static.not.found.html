@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>not found</title>
+</head>
+<body>
+	资源不存在！
+	<script>
+	var count = 3;
+	setInterval(function() {
+		document.title = --count + '秒后，自动跳转';
+		if (count <=0) {
+			location.href = "http://nuoya.591ku.com/";
+		}
+	}, 1000);
+	</script>
+</body>
+</html>

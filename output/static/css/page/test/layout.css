@@ -1,0 +1,21 @@
+.mod-test {
+  color: #fff;
+}
+.sub-a,
+.sub-b {
+  background: #f00;
+  padding: 10px;
+  height: 300px;
+}
+.sub-b {
+  background: #00f;
+}
+.sub-a-1,
+.sub-a-2 {
+  background: #800080;
+  height: 80px;
+  margin: 20px;
+}
+.sub-a-2 {
+  background: #008000;
+}

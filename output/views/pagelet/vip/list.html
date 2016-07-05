@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/static/css/page/vip/list.css">
+
+<div class="mod-vip-list mod" >
+ 	<div class="list-header">
+ 		<div class="ui icon input">
+			<input type="text" placeholder="搜索VIP">
+			<i class="circular search icon"></i>
+		</div>
+		<a href="/vip/publish"  class="ui down button">
+			<i class="user icon"></i>
+			添加VIP
+		</a>
+ 	</div>
+	<table class="ui  column table segment">
+		<thead>
+			<tr>
+				<th>名称</th>
+				<th>性别</th>
+				<th>生日</th>
+				<th>电话</th>
+				<th>邮件</th>
+				<th>地址</th>
+				<th>审批状态</th>
+				<th>创建时间</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i = 0; i < list.length; i ++) { %>
+			<%
+				var item = list[i];
+				var sexName = '女';
+				if (item.sex == 1) {
+					sexName = '男';
+				}
+			%>
+			
+			<tr class="item" data-id="${item.id}">
+				<td>${item.name}</td>
+				<td>${sexName}</td>
+				<td>${item.birthday|dateFormat}</td>
+				<td>${item.phone}</td>
+				<td>${item.email}</td>
+				<td>${item.address}</td>
+				<td class="process">${item.process}</td>
+				<td>${item.createDate|timeFormat}</td>
+				<td>
+					<a class="delete" href="void:javascript(0)">删除</a>
+				</td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+
+<script src="/static/js/mod/vip/list.js"></script>
+

@@ -1,0 +1,22 @@
+<style>
+	.mod-load ul li {
+		padding: 20px;
+		background: green;
+		margin: 4px;
+		color: #fff;
+	}
+	.mod-load ul li.load-more {
+		text-align: center;
+		background: gray;
+		cursor: pointer;
+	}
+</style>
+<div class="mod-load">
+	<ul>
+		<% for(var i=1;i<10;i++) { %>
+		<li>歌曲${i}</li>
+		<% } %>
+		<li class="load-more"><a>加载更多...</a></li>
+	</ul>
+</div>
+<script src="/static/js/test/load/index.js"></script>

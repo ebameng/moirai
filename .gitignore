@@ -1,0 +1,12 @@
+node_modules/*
+__cache__/*
+__temp_upload__/*
+__fis_*
+test/*
+output/__temp_upload__/*
+framework
+dest
+zip
+extend/pinsta/action/dest
+extend/pinsta/action/zip
+*.log

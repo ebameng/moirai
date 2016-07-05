@@ -1,0 +1,21 @@
+
+<%extends 'master/base' %>
+<%block name='block_header_css' append%>
+	<link rel="stylesheet" href="/st/css/page/welcome.css">
+	<style>
+		.action-paresh	{
+			background: gray;
+			color: #fff;
+			padding: 10px;
+		}
+		.mail {
+			padding: 10px;
+			background: green;
+			color: #fff;
+		}
+	</style>
+<%/block%>
+<%block name='block_main_center'%>
+	<a href="/hello" class="action-paresh">tt</a>
+	<a class="mail" href="mailto:zhangjie@591ku.com">发送到官方邮箱</a>
+<%/block%>

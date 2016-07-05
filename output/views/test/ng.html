@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular test</title>
+	<script type="text/javascript"  src="/st/js/base/angular.js"></script>
+</head>
+<body >
+	<div class="wraper" ng-app="MainApp">
+		<div    ng-controller="ListCtrl">
+			<ul >
+				<li ng-repeat="item in list" ng-bind="item.sex"> </li>
+			</ul>
+			<input type="text" ng-model="textValue" />
+			<input type="text" ng-model="changeValue" placeholder='watch' />
+			<div class="button" ng-click="setTextValue(e)">click here to set text value {{textValue}}</div>
+			<div class="button" ng-click="setTextValue(e)">click here to set text value</div>
+		</div>
+	</div>
+	<hello>dd</hello>
+	<input type="button" value="insert" id="insert" click="insert">
+	<script>
+
+		function init() {
+			var MainApp = angular.module('MainApp', [] );
+			MainApp.directive('hello', function() {
+				return {
+					restrict: 'E',
+					template: '<div>hello, {{world}}</div>'
+				}
+			});
+			MainApp.controller('ListCtrl', ["$compile", "$scope", function($compile ,$scope, Items) {
+					$scope.list = [
+						{name: 'alex', sex: 'boy'},
+						{name: 'zhang', sex: 'girl'},
+						{name: 'alex', sex: 'boy'}
+					];
+
+					$scope.textValue = 'fuck you';
+
+					$scope.setTextValue = function(e) {
+						$scope.textValue = + new Date;
+					}
+
+					function watcher() {
+						console.log(11, + new Date);
+					};
+					$scope.$watch('changeValue', watcher)
+			}]);
+
+
+			MainApp.factory('Items', function() {
+				return {
+					init: function() {}
+				}
+			});
+		} 
+	</script>
+	<script type="text/ng-template" id="test-tpl-xx.html">
+		<div    ng-controller="ListCtrl">
+			<ul >
+				<li ng-repeat="item in list" ng-bind="item.sex"> </li>
+			</ul>
+			<input type="text" ng-model="textValue" />
+			<input type="text" ng-model="changeValue" placeholder='watch' />
+			<div class="button" ng-click="setTextValue(e)">click here to set text value {{textValue}}</div>
+			<div class="button" ng-click="setTextValue(e)">click here to set text value</div>
+		</div>
+	</script>
+	<script type="text/ng-template" id="test-tpl.html">
+		<div class="hello">hello</div>
+	</script>		
+	<script>
+	document.body.setAttribute('ng-app', 'MainApp');
+		var appModule = angular.module('MainApp', []);
+		appModule.run(function($templateCache) {
+			$templateCache.put('testtpl.html', document.getElementById('test-tpl.html').text);
+		})
+		appModule.directive('hello', function() {
+			return {
+				restrict: 'E',
+				template: 
+				replace: true,
+				link: function(scope, element, attrs) {
+					debugger;
+				}
+			};
+		});
+		// document.getElementById('insert').addEventListener('click', function() {
+		// 	var container = document.querySelector('.wraper');
+		// 	container.innerHTML = container.innerHTML + [
+		// 		'<div   ng-controller="ListCtrl">',
+		// 			'<hello></hello>',
+		// 			'<ul >',
+		// 				'<li ng-repeat="item in list" ng-bind="item.sex"> </li>',
+		// 			'</ul>',
+		// 			'<input type="text" ng-model="textValue" />',
+		// 			'<input type="text" ng-model="changeValue" placeholder="watch" />',
+		// 			'<div class="button" ng-click="setTextValue(e)">click here to set text value {{textValue}}</div>',
+		// 			'<div class="button" ng-click="setTextValue(e)">click here to set text value</div>',
+		// 		'</div>'
+		// 	].join('')
+
+		// 	init()
+		// });
+	</script>
+</body>
+</html>

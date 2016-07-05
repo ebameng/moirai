@@ -1,0 +1,10 @@
+<%
+ 	var name = name || 'imageFile';
+%>
+<div class="row">
+	<div class="ui-input-image-preview">
+		<img src="/static/img/icons/image-uploader.png" alt="默认图片">
+		<input type="file" name="${name}" title="选择文件" accept="image/*" required  />
+	</div>
+	<link rel="stylesheet" href="/static/css/page/common/input-image-preview.css">
+</div>

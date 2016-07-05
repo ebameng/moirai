@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/static/css/page/spider/pinsta.css">
+<style>
+	.center {
+		padding: 0;
+	}
+	#main .content {
+		margin: 0;
+	}
+	.row {
+		margin-bottom: 8px;
+	}
+</style>
+<div class="mod-spider-weibo">
+	<div class="ui left icon input fluid action row">
+		<i class="user icon"></i>
+		<input type="text" class="input-user" placeholder="weibo.com/someone">
+		<div class="ui button  btn-add-user">抓取微博ID</div>
+	</div>
+	<div class="ui left icon input fluid action row">
+		<i class="user icon"></i>
+		<input type="text" class="input-cookie" placeholder="cookie">
+		<div class="ui button  btn-add-cookie">添加登录Cookie</div>
+	</div>
+			 
+	
+	<div class="ui left icon input fluid action row">
+		<i class="user icon"></i>
+		<input type="text" class="input-pinsta-user" placeholder="pinsta.me/someone">
+		<div class="ui button  btn-fetch-users">获取空闲用户</div>
+	</div>
+
+	<div class="ui buttons btn-switch row">
+		<div class="ui button btn-on " data-state="on">开启上传</div>
+		<div class="or" data-text="图"></div>
+		<div class="ui  button positive btn-off" data-state="off">不上传了</div>
+	</div>
+	 
+ 	<div class="ui fluid icon input" style="margin-top: 12px">
+ 	  <input type="text" class="input-users-without-atlas" placeholder="">
+ 	  <i class="puzzle icon"></i>
+ 	</div>
+	<div class="spider-terminal">
+		<!-- <div class="item">
+			<a href="">
+				<img src="https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/926227_316509548518052_466118693_a.jpg">
+			</a>
+			<div class="user">
+				<img src="https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/926227_316509548518052_466118693_a.jpg">
+				<div class="name">xsfsd</div>
+			</div>
+		</div> -->
+	</div>
+	 
+	<footer class="status-bar">
+		<div class="status-item produce">本次会话生产计数：<span class="counter">0</span></div>
+		<div class="status-item rate">可用／总数: <span class="avail">0</span>／<span class="total">N</span></div>
+		<div class="status-item user-count">用户数：<span></span></div>
+		<div class="status-item repeat-check"><span>重复项红灯<i></i></span></div>
+	</footer>
+
+</div>
+<script src="/static/js/mod/spider/weibo.js"></script>

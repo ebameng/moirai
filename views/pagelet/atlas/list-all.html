@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/static/css/page/atlas/list.css">
+<style>
+	.center {
+		padding: 0;
+	}
+</style>
+<div class="mod-atlas-list mod">
+	<%
+	var isType_0 = '';
+	var isType_1 = '';
+	var isType_2 = '';
+	if (type == 0) {
+	isType_0 = 'active';
+	} else if(type == 1) {
+	isType_1 = 'active';
+	} else {
+	isType_2 = 'active';
+	}
+	var list = data['list'];
+	%>
+	<div class="tab-header">
+		<div class="ui top attached tabular menu">
+			<a href="/atlas/list?type=0" class="${isType_0} item action-paresh">女款</a>
+			<a href="/atlas/list?type=1" class="${isType_1} item action-paresh">男款</a>
+			<a href="/atlas/list?type=2" class="${isType_2} item action-paresh">中性风</a>
+			<!-- <a class=" item">品牌标签</a> -->
+		</div>
+	</div>
+	<ul  >
+		<% for(var i = 0; i < list.length; i ++) { %>
+		<%
+		var item = list[i];
+		var index = i+1;
+		var recordStatus = 'ok';
+		var size = item.coverImage['size'].split('*');
+		var width = size[0], height = size[1] || 100;
+		var ratio = width / height;
+		var imgStyle = ";width: 100%; height: auto;"
+		
+		if(ratio <= 1) {
+			imgStyle = ";width: auto; height: 100%;"
+		}
+		%>
+		<li class="item" data-id="${item.id}">
+			<a href="/atlas/${item['id']}/detail?" title="查看图集" target="_blank">
+				<img class="lazy-load" style="${imgStyle}" data-ratio="${ratio}"   data-original="${item.coverImage.thumb['url']}"  alt="">
+				<div class="text">
+					<p class="delete all" title="删除" data-id="${item.id}"></p>
+					<div class="text-content">
+						<div class="origin">
+							<p class="num"> 共${item['imageNum']}张
+							</p>
+						</div>
+						<p class="desc">${item['content']}</p>
+						<div class="op">
+							<div class="fav"><span>${item['praiseNum']}</span></div>
+							<div class="speak">
+								<span>${item['commentNum']}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</li>
+		<% } %>
+	</ul>
+	<%include name="common/widgets/pagenavi.html" var="page" /%>
+</div>
+<script src="/static/js/mod/common/lazy.js"></script>
+<script src="/static/js/mod/atlas/list.js"></script>

@@ -1,0 +1,81 @@
+@import "./_css3";
+ 
+.class-page-navi {
+	box()
+	align()
+	pack(start)
+	margin: 16px 0;
+	height: 32px;
+	.start, .end, .prev, .next, .bar {
+		fontheight(30px);
+		width: 30px;
+		text-align: center;
+		color: #3e3e3e;
+		text-align: center;
+		border: solid 1px #ededed;
+		font-weight: 700;
+	}
+
+	.prev, .bar {
+		border-right: none;
+	}
+	.start, .end {
+		margin-right: 4px;
+		padding: 0 4px;
+		width: auto;
+	}
+	.bars {
+		box()
+	}
+	.pin {
+		background: #ededed;
+		color: #999;
+	}
+	.summary {
+		margin-left: 6px;
+		box()
+		.total {
+			margin-right: 2px;
+		}
+		.port {
+			input {
+				height: 100%;
+			}
+		}
+	}
+}
+
+.file-picker {
+	input[type="file"] {
+		display: none;
+	}
+}
+// page widget
+.class-btn-add-files {
+	width: 200px;
+	height: 40px;
+	position: relative;
+	overflow: hidden;
+	background: #20a7e9;
+	color: #fff;
+	border-radius: 12px;
+	line-height: 40px;
+	text-align: center;
+		
+	input[type="file"] {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+		direction: ltr;
+		cursor: pointer;
+	}
+	.text {
+		text-align: center;
+		fontheight(40px);
+		
+	}
+}

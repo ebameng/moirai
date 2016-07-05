@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="/static/css/page/atlas/publish.css">
+<link rel="stylesheet" href="/static/plugins/datetime.picker/jquery.datetimepicker.css">
+<div class="mod-publish">
+	<div class="sub-left">
+		<div class="container">
+			<p class="tip" style="font-size: 40px; color: #99B7AE; text-align: center;">
+				图集框 <br>
+				<span style="font-size: 14px; ">双击上传后的图片到高亮，可设置为封面图</span><br>
+				<span style="font-size: 14px; ">拖拽右侧的标签，放到高亮的图片上</span><br>
+				<span style="font-size: 14px; ">长按图片2s后，单击可删除不要的图片</span>
+			</p>
+		</div>
+	</div>
+	<div class="sub-right">
+		<div class="row">
+			<div class="file-box">
+				<div class="drop-zone file-picker" id="picker">
+					<div class="tips">
+						可将1或N张照片拖到这里
+					</div>
+					<div class="btnAddFiles">
+						上传图集
+					</div>
+				</div>
+			</div>
+		</div>
+		<form  action="/_bridge/admin/atlas/add" method="post">
+			<div class="row imgids" style="display: none">
+				<!-- <input type="hidden" name="imageIds"> -->
+			</div>
+			<div class="row labelids" style="display: none">
+				<!-- <input type="hidden" name="imageIds"> -->
+			</div>
+			<div class="row" style="position: relative;">
+				<div class="ui right icon input  label-search-box">
+					<input type="text"  class="label-search-input" placeholder="搜索标签" />
+					<i class="tags  icon"></i>
+					<ul class="ui-suggestion"> </ul>
+				</div>
+				
+				<div class="grouped inline fields label-group">
+					<%
+					var list = data['list'];
+					var _uid = + new Date;
+					%>
+					<% for(var i =0, len = list.length; i<len; i++) { %>
+					<%
+					var item = list[i];
+					var itemID = item['id'];
+					%>
+					<div class="label-item" data-id="${itemID}" data-type="${item.type}" data-brand="${item.brand}">${item['name']}</div>
+					
+					<% } %>
+					<% if (_isAddLabelAvailable) { %>
+					<a href="/label/publish" class="ui basic button small btn-add-label">
+						<i class="tag middle icon"></i>
+						添加标签
+					</a>
+					<% } %>
+					<div class="ui basic button small btn-fav-label">
+						<i class="star middle icon"></i>
+						收藏标签
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="ui form">
+					<textarea style="min-height: 48px;height: 48px; width: 100%;" placeholder="说点什么......" name="content"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<h2 class="label">地理位置</h2>
+				<div class="dist">
+					<select></select><!-- province -->
+					<select class="location" name="location"></select><!-- city -->
+				</div>
+			</div>
+			<div class="row">
+				<h2 class="label">附加链接（可选）</h2>
+				<div class="link-box">
+					<!-- <div class="text-link">
+									<div class="ui form">
+													<div class="field">
+																	<input type="text" name="linkNames" placeholder="文字（如：旅游）">
+													</div>
+									</div>
+									<div class="ui form">
+													<div class="field">
+																	<input type="url" name="linkUrls" placeholder="链接：http://www.fmsjs.com">
+													</div>
+									</div>
+									<span class="destroy"></span>
+					</div> -->
+					<div class="circular ui icon button big btn-add-textlink">
+						<i class="icon settings add"></i>
+						<i class="icon settings linkify"></i>
+					</div>
+					 
+				</div>
+			</div>
+			<div class="row">
+				<h2 class="label">启用定时器（可选）</h2>
+				<div class="ui left icon input">
+					<input type="text" readonly class="datetimepicker" name="timer" placeholder="日期时间" />
+					<i class="time icon"></i>
+				</div>
+				<span class="clear-timer">清空</span>
+			</div>
+			
+			<div class="horizontal">
+				<div class="inline field recommend item">
+					<div class="ui checkbox">
+						<%
+						var uId = + new Date();
+						%>
+						<input type="checkbox" id="recmd${uId}" name="recommend" checked />
+						<label for="recmd${uId}">设为推荐</label>
+					</div>
+				</div>
+				<% if (_isTuPopoutAvailable) { %>
+				<div class="inline field top item">
+					<div class="ui checkbox">
+						<input type="checkbox" id="top${uId}" name="popout" />
+						<label for="top${uId}" title="让你的图集永远显示在APP顶部">⇪置顶</label>
+					</div>
+				</div>
+				<% } %>
+				<div class="ui button middle btn-submit item"> 发布 </div>
+			</div>
+		</form>
+		<div class="label-history-box">
+			<h2 class="title">标签收藏夹</h2><span class="close"> ╳ </span>
+			<div class="main"></div>
+			<div class="footer">
+				提示：拖拽标签到此收藏，双击标签可移除
+			</div>
+		</div>
+	</div>
+</div>
+<!-- import art dialog -->
+<script src="/static/js/base/zepto-dnd.js"></script>
+<script src="/static/js/mod/atlas/publish.js"></script>

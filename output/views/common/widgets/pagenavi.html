@@ -1,0 +1,43 @@
+<div class="page-nav">
+	<% if (current != 1) { %>
+	<a class="action-paresh start" href="${pathname}?${queryString}&page=1">首页</a>
+	<% } %>
+	<% if (prev) { %>
+	<a class="action-paresh prev" href="${pathname}?${queryString}&page=${prev}" title="上一页">&lt;</a>
+	<% } %>
+	<div class="bars">
+		<%
+			var pageList = list;
+		%>
+		<% for(var i = 0; i < pageList.length; i ++) { %>
+			<%
+				var cursor = pageList[i];
+			%>
+			<% if(current == cursor) { %>
+				<a class="action-paresh bar pin">${cursor}</a>
+			<% } else { %>
+				<a href="${pathname}?${queryString}&page=${cursor}" class="action-paresh bar">${cursor}</a>
+			<% } %>
+		<% } %>
+	</div>
+	<% if (next) { %>
+	<a class="action-paresh next" href="${pathname}?${queryString}&page=${next}" title="下一页">&gt;</a>
+	<% } %>
+	<% if (current != totalPage) { %>
+	<a class="action-paresh end" href="${pathname}?${queryString}&page=${totalPage}">尾页</a>
+	<% } %>
+	<%
+		var goNum = current + 1  < totalPage ? current + 1 : 1;
+	%>
+	<div class="summary">
+		<div class="total">
+			共${totalPage}页，
+		</div>
+		<div class="port">
+			<form action="${pathname}?${queryString}&">
+			跳至<input type="number" min="1" max="${totalPage}" required name="page" value="${goNum}">
+			<input type="submit" value="确定" />
+			</form>
+		</div>
+	</div>
+</div>

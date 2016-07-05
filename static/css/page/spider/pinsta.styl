@@ -1,0 +1,111 @@
+@import "../../liblus/_css3";
+
+body {
+	padding: 12px;
+}
+.mod-spider-pinsta, .mod-spider-weibo {
+	.fields input {
+		&.disable {
+			background: rgb(225, 225, 225);
+		}
+	}
+	.spider-msg-item {
+		color: #eee;
+		margin-top: 12px;
+		padding: 4px;
+	}
+	.spider-terminal {
+		margin-top: 12px;
+		padding: 8px;
+		border-radius: 3px;
+		min-height: 400px;
+		background: #1C2C36;
+		color: #fff;
+		clear()
+		.item {
+			width: 140px;
+			height: 140px;
+			float: left;
+			background: #333;
+			margin: 0 12px 12px 0;
+			border-radius: 3px;
+			overflow: hidden
+			a {
+				height: 100px;
+				width: 140px;
+				background: gray;
+				box();
+				align()
+				pack()
+			}
+			img {
+				height: 100%;
+				width: auto;
+			}
+			.user {
+				box()
+				pack()
+				align()
+				padding: 0 12px;
+				height: 40px;
+				color: #eee;
+				img {
+					display: block;
+					border-radius: 18px;
+					height: 36px;
+					min-width: 36px;
+					width: auto;
+				}
+				.name {
+					flex(1)
+					text-align: center;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+	.ui.tabular {
+		margin-bottom: 0;
+		.item.active {
+			background: #1C2C36;
+			color: #fff;
+			border-bottom: 1px solid #1C2C36;
+		}
+	}
+	footer.status-bar {
+		position: absolute;
+		height: 22px;
+		line-height: 10px;
+		font-size: 12px;
+		top: -3px;
+		left: 10px;
+		right: 10px;
+		background: #47b742;
+		padding: 4px;
+		padding-top: 7px;
+		border-radius: 4px;
+		color: #fff;
+		box()
+		.status-item {
+			margin: 0 12px;
+		}
+		.repeat-check {
+			flex(1)
+			text-align: right;
+			transition: all 03s linear;
+			span {
+				background: green;
+				padding: 3px 8px;
+			}
+		}
+	}
+	
+		 
+	.tab-bars {
+		h4 {
+			padding: 20px;
+		}
+	}
+}
+

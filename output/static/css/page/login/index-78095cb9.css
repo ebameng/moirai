@@ -1,0 +1,39 @@
+body {
+  background: url("http://nuoya.591ku.com/static/img/bg-login-24322816.png");
+}
+.login {
+  border-radius: 12px;
+  margin: 200px auto;
+  width: 300px;
+  background: #f2f2f2;
+  height: 200px;
+  padding: 10px;
+}
+.login h2 {
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 6px;
+  margin: 0px 12px;
+}
+.login .row {
+  margin: 20px;
+}
+.login input {
+  height: 28px;
+  width: 100%;
+  padding: 0px 4px;
+  display: block;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+.login input[type="submit"] {
+  border: none;
+  font-size: 16px;
+  background: #0e45c0;
+  color: #fff;
+  cursor: pointer;
+}
+.login input[type="submit"]:hover {
+  background: #102b66;
+}

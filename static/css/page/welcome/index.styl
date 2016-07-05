@@ -1,0 +1,70 @@
+@import "../../liblus/_css3";
+
+.mod-welcome {
+	h2.title {
+		color: gray;
+		text-align: center;
+		padding: $boxPadding 0;
+	}
+	.row {
+		margin-bottom: 20px;
+	}
+	.row h2 {
+		border-left: 4px solid $themeColorRed;
+		padding: 0 10px;
+		margin-bottom: 6px;
+	}
+	.feature {
+		box()
+		align(center)
+		pack(center)
+		.f-item {
+			size(170px);
+
+			margin: 0 80px;
+			color: #fff;
+			border-radius: (@height /2);
+			background: $themeColorRed;
+		}
+		p {
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 12px;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			height: 100px;
+			width: 100px;
+		}
+	}
+	.advice {
+		padding: 10px 20px;
+	}
+	.browser {
+		box()
+		pack()
+		align()
+		img {
+			width: 100px;
+			height: 100px;
+			margin: 100px;
+
+		}
+	}
+	.show {
+		text-align: center;
+		img {
+			display: inline-block;
+			width: 400px;
+			margin: 0 auto;
+			border-radius: 8px;
+			padding: $boxPadding;
+			background: #fff;
+			margin-bottom: 8px;
+		}
+	}
+	.pn {
+		padding: $boxPadding;
+	}
+}

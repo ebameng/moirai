@@ -1,0 +1,52 @@
+<script type="text/javascript" src="/static/js/base/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/base/jquery.lazyload.js"></script>
+<style>
+	
+	body {
+		margin: 0;
+	}
+	.mod-visible {
+		margin-top: 0;
+	}
+	.item {
+		height: 100px;
+		background: blue;
+		overflow: auto;
+		position: relative;;
+		text-align: center;
+	}
+	.item img {
+		height: 100%;
+		display: block;
+	}
+	.item:nth-child(even) {
+		background: red;
+	}
+	.block {
+		margin: 20px;
+		border: 3px;
+		padding: 5px;
+		height: 200px;
+		background: purple;
+	}
+	.num {
+		position: absolute;
+		top: 0;
+	}
+</style>
+<div class="block">
+	11
+</div>
+<div class="mod-visible">
+	<% for (var i=1;i<=30;i++) {%>
+	<div class="item">
+		<img original="http://img0.bdstatic.com/img/image/4a75a05f8041bf84df4a4933667824811426747915.jpg" alt="">
+		<span class="num">${i}</span>
+		<% if (i ==10) { %>
+			<div style="height: 200px; background: yellow"></div>
+		<% } %>
+	</div>
+	<% } %>
+</div>
+
+<script src="/static/js/mod/test/visible.js"></script>

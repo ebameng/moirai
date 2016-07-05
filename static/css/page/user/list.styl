@@ -1,0 +1,44 @@
+@import "../../liblus/_css3";
+@import "../../liblus/widget";
+
+// start file
+.mod-user-list {
+	position: relative;
+	.list {
+		clear()		
+		width: 700px;
+		li {
+			float: left;
+			margin: 10px;
+			width: 120px;
+			.img-wrap {
+				size(120px);
+				box()
+				pack()
+			}
+			.recmd {
+				position: relative;
+				.hide {
+					position: absolute;
+					top: 0px;
+					right: 0;
+				}
+			}
+
+			.op {
+				display: block;
+			}
+			.info {
+				fontheight(28px);
+				text-align: center;
+				white-space: nowrap;
+				width: 100%;
+				overflow: hidden;
+			}
+		}
+	}	 
+}
+
+.page-nav {
+	@extend .class-page-navi
+}

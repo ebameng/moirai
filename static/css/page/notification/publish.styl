@@ -1,0 +1,75 @@
+@import "../../liblus/_css3";
+@import "../../liblus/widget";
+
+
+.mod-notification-publish {
+	position: relative;
+	.row {
+		margin: 10px;
+	}
+	select.ui.dropdown {
+		width: 200px;
+		height: 30px;
+		background: #fff;
+		visibility: visible;
+		option {
+			width: 500px;
+			height: 50px;
+		}
+	}
+	.clear-timer {
+		cursor: pointer;
+	}
+	.selection:focus {
+		border: 1px solid red;
+	}
+	.jumpTarget {
+		display: none;
+	}
+	.search-label-tmpl {
+		display: none;
+	}
+	.label-search-box {
+		position: relative;	
+	}
+	.ui-suggestion {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 100%;
+		margin-top: 6px;
+		box-shadow: 0 1px 16px 0 #000;
+		z-index: 1000;
+		background: #fff;
+		max-height: 400px;
+		overflow: auto;
+		.label-item {
+			box()
+			align()
+			padding: 8px 6px;
+			border-bottom: 1px solid #e8e8e8;
+			&:last-child{
+				margin-bottom: 20px;
+			}
+			img {
+				size(36px);
+				margin-right: 6px;
+				border-radius: 3px;
+			}
+		}
+		.user-item {
+			box()
+			align()
+			padding: 8px 6px;
+			border-bottom: 1px solid #e8e8e8;
+			&:last-child{
+				margin-bottom: 20px;
+			}
+			img {
+				size(36px);
+				margin-right: 6px;
+				border-radius: 3px;
+			}
+		}
+	}
+}
